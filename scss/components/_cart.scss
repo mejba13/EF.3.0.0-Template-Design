@@ -1,0 +1,897 @@
+
+
+
+/*=================================
+    CART STYLE
+====================================*/
+.cart-section {
+    padding: 40px 0px;
+
+    @include themify($themes) {
+        background-color: themed("dark1") ;
+    }
+
+    @include respond (phone) {
+        padding: 30px 0px !important;
+    }
+    .sec-title {
+        padding-bottom: 0;
+    }
+}
+
+.cart-ttl {
+    position: relative;
+    margin-bottom: 30px;
+
+    @include respond (phone) {
+        margin-bottom: 20px;
+    }
+    h2 {
+        text-shadow: -2px 2px 4px rgba(255, 255, 255, 0.3);
+        font-family: Quantico;
+        font-size: 36px;
+        margin-bottom: 0 !important;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: 0.05em;
+        display: block;
+        text-align: center;
+
+
+    }
+    h6 {
+        @include themify($themes) {
+            color: themed("default");
+        }
+        font-family: $font-quantico;
+        font-size: 14px;
+        font-weight: $font-medium;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+    }
+
+    // @include respond (phone) {
+    //     display: none;
+
+    // }
+    
+}
+
+
+.neaterfordesktop {
+    margin-bottom: 20px;
+
+    .cd-breadcrumb {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-basis: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        border-radius: 8px;
+        @include themify($themes) {
+            background-color: themed("faq-bg") ;
+        }
+
+        li {
+            position: relative;
+            padding: 17px;
+            width: 100%;
+            text-align: center;
+            a {
+                @include themify($themes) {
+                    color: themed("default");
+                }
+                font-family: $font-lato;
+                font-size: 16px;
+                font-weight: 600;
+                display: block;
+                text-align: center;
+                text-transform: capitalize;
+
+                @include respond (tabport) {
+                    font-size: 12px;
+                    margin-top: 5px;
+                    line-height: 17px;
+                }
+    
+                i {
+                    font-size: 20px;
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+            }
+
+            &:nth-of-type(2) {
+                background: $color-primary;
+                margin-right: 40px;
+
+                a {
+                    color: $color-default;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    content: "";
+                    height: 100%;
+                    width: 0;
+                    border: 24px solid transparent;
+                    border-right-width: 0;
+                    border-left-width: 20px;
+                    border-top-width: 30px;
+                    border-bottom-width: 30px;
+                    border-left-color: inherit;
+                    z-index: 11;
+                    color: $color-primary;
+
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    height: 100%;
+                    width: 0;
+                    border: 24px solid transparent;
+                    border-right-width: 0;
+                    border-left-width: 20px;
+                    border-top-width: 30px;
+                    border-bottom-width: 30px;
+                    border-left-color: inherit;
+                    z-index: 11;
+                    @include themify($themes) {
+                        color: themed("faq-bg") ;
+                    }
+                }
+            }
+
+            @include respond (tabland) {
+                padding: 17px 11px;
+            }
+        }
+    }
+    @include respond (tabport) {
+        display: none;
+    }
+}
+
+.ef_progress {
+    @include themify($themes) {
+        background-color: themed("faq-bg") ;
+    }
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 7px;
+    list-style: none;
+    margin-bottom: 15px;
+    table-layout: fixed;
+    width: 100%;
+    color: #849397;
+    display: none;
+
+    @include respond (tabport) {
+        display: flex;
+        align-items: center;
+    }
+
+    & >li {
+        @include themify($themes) {
+            color: themed("default");
+        }
+        color: $color-dark1;
+        font-family: $font-lato;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: capitalize;
+        z-index: 1;
+        position: relative;
+        display: table-cell;
+        padding: 0px 30px;
+
+        @include respond (phone) {
+            padding: 0 24px;
+        }
+        @include respond (phone-sm-mid) {
+            padding: 0 12px;
+        }
+        @include respond (phone-sm) {
+            line-height: 20px;
+        }
+
+        &::before {
+            content: attr(data-step);
+            display: block;
+            margin: 0 auto;
+            background: $color-primary;
+            color: $color-default;
+            width: 3em;
+            height: 3em;
+            text-align: center;
+            margin-bottom: .25em;
+            line-height: 3em;
+            border-radius: 100%;
+            position: relative;
+            z-index: 10;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            background: $color-primary;
+            width: 100%;
+            height: .5em;
+            top: 1.25em;
+            left: 50%;
+        }
+        &:nth-of-type(2) {
+            &::after {
+                background: #dfe3e4;
+            }
+        }
+        &:nth-of-type(3) {
+            &::after {
+                display: none;
+            }
+            &::before {
+                background: #dfe3e4;
+                color: $color-dark1;
+            }
+        }
+    }
+}
+
+
+
+
+    
+    table {
+        width: 100%;
+
+        thead {
+            
+            tr {
+                border-radius: 8px;
+                th {
+                    @include themify($themes) {
+                        color: themed("default");
+                        background-color: themed("faq-bg") ;
+
+                        @include respond (phone) {
+                            background-color: transparent;
+                            height: 26px;
+                           
+                             
+                        }
+                    }
+                    font-family: $font-lato;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 500;
+                    height: 68px;
+                    line-height: 32px;
+                    letter-spacing: 0em;
+                    text-align: left;
+
+                    @include respond (tabland) {
+                        font-size: 18px;
+                    }
+                    @include respond (tabport) {
+                        font-size: 14px;
+                    }
+                    @include respond (phone) {
+                        font-size: 12px;
+                        font-weight: $font-regular;
+                        line-height: 26px;
+                        
+                    }
+                    @include respond (phone-sm-mid) {
+                        font-size: 11px;
+                    }
+                    @include respond (phone-xm-mid) {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+
+        th.cart-pd-thumb {
+            padding-left: 70px;
+            border-radius: 8px 0px 0px 8px;
+
+            @include respond (phone) {
+               padding-left: 0;
+                  
+            }
+        }
+        th.cart-pd-price {
+            border-radius: 0px 8px 8px 0px;
+        }
+
+        td {
+            @include themify($themes) {
+                color: themed("default");
+            }
+            font-family: $font-lato;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: $font-medium;
+            line-height: 32px;
+            letter-spacing: 0em;
+            text-align: left;
+            padding: 15px 0px;
+
+            @include respond (tabland) {
+                font-size: 18px;
+            }
+            @include respond (tabport) {
+                font-size: 14px;
+            }
+
+            @include respond (phone) {
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 26px;
+                padding: 11px 0px;
+
+            }
+            @include respond (phone-sm-mid) {
+                font-size: 11px;
+            }
+            @include respond (phone-xm-mid) {
+                font-size: 10px;
+            }
+        }
+    }
+
+
+    .cart-pd-thumb {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        @include respond (phone-sm) {
+            max-width: 180px;
+        }
+        img {
+            text-align: center;
+            width: 90px;
+            height: 100px;
+            margin-right: 30px;
+            border-radius: 10px;
+
+            @include respond (tabport) {
+                margin-right: 15px;
+            }
+            @include respond (tabland) {
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+            }
+            @include respond (phone) {
+                width: 30px;
+                height: 35px;
+                border-radius: 5px;
+                margin-right: 8px;
+            }
+        }
+        h6 a{
+            font-weight: $font-medium;
+            font-size: 20spx;
+            line-height: 32px;
+            display: inline-block;
+            @include themify($themes) {
+                color: themed("default");
+            }
+            @include respond (medium) {
+               max-width: 350px;
+            }
+            @include respond (tabland) {
+                font-size: 18px;
+            }
+            @include respond (tabport) {
+                font-size: 14px;
+                max-width: 250px;
+            }
+            @include respond (phone) {
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 15px;
+            }
+            @include respond (phone-sm-mid) {
+                font-size: 11px;
+                // max-width: 60px;
+                overflow: hidden;
+                // white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            @include respond (phone-xm-mid) {
+                font-size: 10px;
+            }
+        }
+    }
+
+    .cart-pd-thumb span{
+        @include themify($themes) {
+            color: themed("default");
+            background-color: themed("toggle-bg") ;
+        }
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 300;
+        letter-spacing: -0.04em;
+        text-align: center;
+        display: block;
+        height: 32px;
+        width: 32px;
+        margin-right: 40px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-default;
+        }
+        
+        @include respond (tabland) {
+            margin-right: 20px;
+        }
+        @include respond (tabport) {
+            font-size: 14px;
+            height: 25px;
+            width: 25px;
+            line-height: 25px;
+        }
+        @include respond (phone) {
+            position: absolute;
+            font-size: 12px;
+            height: 15px;
+            width: 15px;
+            left: -2px;
+            top: 5px;
+            line-height: 15px;
+            margin-right: 0;
+            border-radius: 10px;
+            
+        }
+        @include respond (phone-sm) {
+            font-size: 8px;
+            top: 7px;
+        }
+
+    }
+
+
+    .cart-pd-model {
+        span {
+            color: $color-primary;
+        }
+
+        @include respond (xxl) {
+            display: none;
+        }
+    }
+    tbody {
+        tr {
+            border-bottom: 1px solid;
+            @include themify($themes) {
+                border-color: themed("dark3");
+            }
+        }
+    }
+    
+    
+
+
+.quantity {
+    display: inline-block;
+    border-radius: 6px;
+
+    > input[type="number"] {
+        @include themify($themes) {
+            color: themed("default");
+        }
+        border: none;
+        background: transparent;
+        margin: 0;
+        font-size: 20px;
+        font-weight: $font-medium;
+        text-align: center;
+        width: 60px;
+        height: 30px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
+        padding-left: 20px;
+
+        @include respond (tabland) {
+            font-size: 18px;
+        }
+        @include respond (tabport) {
+            font-size: 14px;
+            width: 45px;
+        }
+        @include respond (phone) {
+            font-size: 12px;
+            width: 40px;
+            padding-left: 0;
+        }
+        @include respond (phone-sm-mid) {
+            font-size: 10px;
+            width: 25px;
+        }
+    }
+
+    button {
+        @include themify($themes) {
+            background-color: themed("faq-bg");
+            color: themed("default");
+        }
+        cursor: pointer;
+        display: inline-block;
+        font-size: 12px;
+        text-align: center;
+        height: 32px;
+        width: 32px;
+        border: none;
+        border-radius: 50px;
+
+        @include respond (tabport) {
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+        }
+        @include respond (phone) {
+            font-size: 10px;
+            height: 13px;
+            width: 13px;
+            line-height: 12px;
+        }
+    }
+}
+
+.actions {
+    display: flex;
+    padding: 15px 0px;
+
+    @include respond (phone) {
+        padding: 32px 0px;
+        
+    }
+    @include respond (phone-xm-mid) {
+        .ef-btn.ef-btn-primary.ml-4 {
+            margin-left: 5px !important;
+        }
+    }
+}
+
+.submit-form {
+    @include themify($themes) {
+        background-color: themed("toggle-bg");
+        color: themed("default");
+    }
+    font-family: $font-lato;
+    font-size: 16px;
+    font-weight: $font-regular;
+    line-height: 24px;
+    letter-spacing: -0.025em;
+    text-align: left;
+    flex-basis: 100%;
+	max-width: 500px;
+	margin-right: 20px;
+	flex-wrap: nowrap;
+    border: none;
+    outline: none;
+    padding: 14px 30px;
+    border-radius: 8px;
+    
+
+    @include respond (phone) {
+        height: 35px;
+        border-radius: 8px;
+        padding: 0px 15px;
+
+    }
+    @include respond (phone-sm) {
+        font-size: 12px;
+        line-height: 24px;
+        letter-spacing: -0.025em;
+        margin-right: 5px;
+
+    }
+    @include respond (phone-xm-mid) {
+        margin-right: 0;
+
+    }
+
+}
+#update-cart {
+    border-radius:8px;
+    width: 130px;
+    height: 50px;
+    border: 1px solid $color-primary;
+
+    &:hover {
+        background: transparent;
+        color: $color-primary;
+    }
+    i {
+        padding-right: 0;
+        margin-right: 5px;
+        font-size: 15px;
+
+        @include respond (phone-sm) {
+            font-size: 13px;
+        }
+    }
+
+    @include respond (phone) {
+        height: 35px;
+        width: 119px;
+        border-radius: 8px;
+
+    }
+    @include respond (phone-sm) {
+        height: 35px;
+        width: 80px;
+        border-radius: 8px;
+        font-family: Quantico;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+
+
+    }
+    @include respond (phone-xm) {
+        height: 35px;
+        width: 70px;
+        margin-left: 10px;
+
+    }
+    @include respond (phone-xm-mid) {
+        height: 35px;
+        width: 60px;
+        margin-left: 10px;
+
+    }
+}
+
+
+
+.totals {
+    background: rgba(43, 44, 62, .3);
+    border-radius: 8px;
+    @include themify($themes) {
+        color: themed("default");
+        background-color: themed("cart-total-bg");
+    }
+    .subtotal {
+        border-bottom: 1px solid;
+        padding: 15px 60px 12px 90px;
+        @include themify($themes) {
+            border-color: themed("border-color-2");
+        }
+        @include respond (phone) {
+           padding: 7px 12px;
+            
+        }
+        h4 {
+            font-family: $font-lato;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: $font-medium;
+            line-height: 32px;
+            letter-spacing: 0em;
+            text-align: left;
+            display: inline-flex;
+            @include respond (phone) {
+                font-size: 12px;
+                
+            }
+            .saving {
+                margin-right: 10px;
+
+                @include respond (phone) {
+                   margin-right: 5px;
+                }
+            }
+            
+        
+            span {
+                font-size: 20px !important;
+                color: $color-primary;
+
+                @include respond (tabland) {
+                    font-size: 18px !important;
+                }
+                @include respond (tabport) {
+                    font-size: 14px !important;
+                }
+                @include respond (phone) {
+                    font-size: 12px !important;
+                    // color: $color-default;
+                }
+            }
+            @include respond (tabland) {
+                font-size: 18px;
+            }
+            @include respond (tabport) {
+                font-size: 14px;
+            }
+            @include respond (phone) {
+                font-size: 12px !important;
+            }
+        }
+
+        &:nth-last-of-type(1) {
+            border: none;
+        }
+    }
+    h3 {
+        font-family: $font-lato;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: $font-bold;
+        line-height: 39px;
+        letter-spacing: 0em;
+
+        @include respond (tabport) {
+            font-size: 20px;
+        }
+
+        @include respond (phone) {
+            font-size: 15px;
+            
+        }
+    }
+
+}
+
+
+
+.shopping-btn {
+    margin-top: 25px;
+    padding: 10px 20px;
+    border: 1px solid $color-primary;
+    border-radius: 100px;
+    font-size: 15px;
+    &:hover {
+        background: transparent;
+        color: $color-primary;
+
+        path {
+            fill: $color-primary;
+        }
+    }
+
+    svg {
+        margin-right: 10px;
+
+        path {
+            fill: $color-default;
+            transition: $transition;
+        }
+    }
+
+    @include respond (phone) {
+        display: none;
+        
+    }
+}
+
+// POPUP MODAL    
+
+.modal {
+    .modal-body {
+        background: $color-dark2;
+        border-radius: 3px;
+        margin: 10px;
+
+    }
+    .modal-content {
+        background: $color-dark2;
+    }
+    
+    .thanks,
+    .heading,
+    .sub-heading1,
+    .btn-green {
+        text-transform: uppercase
+    }
+    
+    h4.heading {
+        font-weight: bold;
+        font-size: 65px;
+        color: $color-default;
+
+        @include respond (phone) {
+            font-size: 55px !important;
+        }
+        @include respond (phone-sm) {
+            font-size: 40px  !important;
+        }
+    }
+    
+    
+    
+    .card {
+        padding-bottom: 30px;
+        padding-top: 35px;
+        background: $color-dark2;
+        border-radius: 0;
+
+        .sub-heading1 {
+            padding: 8px 0 8px 0;
+            margin-bottom: 2px;
+            color: $color-primary
+        }
+        
+        .sub-heading2 {
+            padding: 0px 0 8px 0;
+            margin-bottom: 30px;
+            color: #9E9E9E
+        }
+        #e-mail {
+            height: 45px
+        }
+        
+        input.input-box,
+        textarea.input-box {
+            background-color: #ffffff;
+            border: none;
+            outline: none;
+            color: $color-dark1;
+            font-size: 15px;
+            padding: 15px auto 15px auto !important;
+            height: 50px !important
+        }
+        .ef-btn {
+            height: 50px;
+            border-radius: 3px;
+            padding: 7px 18px;
+
+            @include respond (phone-xm-mid) {
+                padding: 7px 18px;
+            }
+        }
+    }
+    
+    
+    
+    input.input-box:focus,
+    textarea.input-box:focus {
+        border: none;
+        outline: none;
+        color: #212121;
+        box-shadow: 0 0 1px 1px #64FFDA
+    }
+    
+    .thanks {
+        color: $color-primary !important;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .conditions {
+        font-family: $font-lato;
+        font-size: 13px;
+        font-weight: $font-light;
+        color: $color-light;
+        text-align: center
+
+    }
+    .modal-footer {
+        border-top: 1px solid $color-dark3;
+    }
+}

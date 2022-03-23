@@ -1,0 +1,247 @@
+// SUBSCRIBE SECTION START
+
+.subscribe-form-section {
+	padding-top: 30px;
+	padding-bottom: 10px;
+	@include themify($themes) {
+		background-color: themed("dark3");
+	}
+}
+
+.subs-title {
+	@include themify($themes) {
+		color: themed("default");
+	}
+	h2 {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		text-shadow: -2px 2px 4px rgba(255, 255, 255, 0.3);
+
+		@include respond (phone) {
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 36px;
+			letter-spacing: 0.05em;
+			text-align: center;
+
+		}
+	}
+	
+	p {
+		margin: 20px auto 40px auto;
+		// max-width: 1098px;
+		max-width: 800px;
+
+		@include respond (phone) {
+			margin-top: 15px;
+		}
+	}
+}
+
+ .subscribe-form{
+	 display: flex;
+	 max-width: 1169px;
+	 margin: 0 auto;
+
+	 @include respond (tabport) {
+		 display: block;
+	 }
+ }
+
+.subs-form {
+	@include themify($themes) {
+		color: themed("default");
+		background-color: themed("topbar-bg");
+	}
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	padding: 0px 25px;
+	border-radius: 100px;
+	flex-basis: 100%;
+	max-width: 470px;
+	margin-right: 20px;
+	flex-wrap: nowrap;
+
+	@include respond(tabport) {
+		text-align: center;
+		margin: 0 auto 15px;
+	}
+	
+	.form-control {
+		font-family: $font-lato;
+		font-size: 16px;
+		font-weight: $font-medium;
+		border: none;
+		width: 100%;
+		padding: 34px 15px;
+		display: inline-block;
+		outline: none;
+		background: transparent;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		&:focus {
+			border: none;
+			outline: none;
+			box-shadow: none;
+			background: transparent;
+		}
+		@include respond(phone) {
+			padding: 30px 15px;
+		}
+	}
+}
+.submit-btn {
+	.ef-btn {
+		border: none;
+		font-size: 16px;
+		outline: none;
+		padding: 19px 49px;
+		border-radius: 100px;
+		background-color: $color-primary;
+		border: 1px solid $color-primary;
+		color: $color-default;
+		transition: $transition;
+
+		&:hover {
+			background: transparent;
+			color: $color-primary;
+		}
+
+		@include respond(phone) {
+			padding: 14px 40px;
+			font-family: Lato;
+			font-size: 14px;
+			font-weight: 800;
+			line-height: 16px;
+			letter-spacing: 0.02em;
+			text-align: center;
+
+		}
+		
+	}
+	@include respond(tabport) {
+		text-align: center;
+		padding-top: 20px;
+	}
+	
+}
+
+.subscribe-bg {
+	@include themify($themes) {
+		background-color: themed("topbar-bg");
+	}
+	padding: 30px 50px 0px;
+	border-radius: 15px;
+	margin-bottom: 20px;
+
+	@include respond (phone-sm) {
+		padding: 30px 20px;
+	}
+}
+
+
+
+.subs-form-v2 {
+	max-width: 514px;
+	margin: 0 auto 30px;
+	background: transparent !important;
+	display: block;
+	padding: 0;
+
+	@include respond (phone-sm) {
+		margin-bottom: 0;
+	}
+
+	.label {
+		font-family: $font-quantico;
+		font-size: 13px;
+		text-transform: uppercase;
+		display: block;
+		text-align: left;
+		opacity: .5;
+	}
+
+	.form-control {
+		background-color: transparent;
+		border-radius: 0;
+		border-width: 0 0 2px;
+		color: $color-default;
+		font-family: $font-quantico;
+		letter-spacing: .05em;
+		padding: 20px 0;
+		border-bottom: 1px solid $color-dark2;
+		
+
+		&:focus {
+			border-bottom: 1px solid;
+			background: transparent !important;
+		}
+	}
+	 input:-webkit-autofill {
+		-webkit-box-shadow {
+			background: transparent !important;
+		}
+	}
+	.check-box.v2 {
+		position: relative;
+		margin-top: 20px;
+		
+	}
+	.styled-checkbox + label {
+		font-family: $font-quantico;
+		margin-left: 35px;
+		text-transform: uppercase;
+		font-size: 15px;
+		text-align: left;
+
+		@include respond (phone) {
+			font-size: 14px;
+		}
+
+		span {
+			display: inline-block;
+			
+			a{
+				display: inline-block;
+				color: $color-green;
+			}
+		}
+	}
+	.submit-btn {
+		.ef-btn {
+			padding: 13px 50px;
+			margin-top: 20px;
+		}
+
+		@include respond (tabport) {
+			padding-top: 0;
+		}
+	}
+	
+}
+
+.subs-title.v2 {
+	margin-bottom: 40px;
+	h6 {
+		font-weight: $font-light;
+		letter-spacing: 2px;
+    	opacity: .5;
+		font-size: 16px;
+	}
+	h2 {
+		text-shadow: -2px 2px 10px rgba(10, 198, 147, 0.5);
+
+		@include respond (phone-sm) {
+			font-size: 19px !important;
+		}
+	}
+}
+
+
+
+
+// SUBSCRIBE SECTION END

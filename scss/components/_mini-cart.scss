@@ -1,0 +1,415 @@
+.cart {
+	padding: 0px 20px;
+	position: relative;
+	.shopping-cart {
+		background: $color-dark1;
+		color: $color-default;
+		position: relative;
+		font-size: 14px;
+		height: 50px;
+		width: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		border-radius: 50px;
+		transition: $transition;
+
+		svg {
+			path {
+				fill: $color-default;
+				transition: $transition;
+			}
+
+			@include respond (tabport) {
+				width: 15px;
+			}
+		}
+
+		&:hover {
+			background: $color-secondary;
+
+			path {
+				fill: $color-dark1;
+			}
+		}
+		@include respond(tabport) {
+			height: 32px !important;
+			width: 32px !important;
+		}
+		span {
+			position: absolute;
+			top: -10px;
+			right: 0;
+			height: 20px;
+			width: 20px;
+			border-radius: 50px;
+			color: $color-default;
+			background: $color-primary;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: $transition;
+
+			@include respond (tabport) {
+				height: 15px;
+				width: 15px;
+				top: -8px;
+				font-size: 10px;
+			}
+		}
+		
+	}
+	@include respond(phone-sm) {
+		padding: 0px 5px;
+	}
+	
+	.tooltip{
+		width: 100px;
+		
+		&-inner {	
+			border-radius: 50px;
+			padding: 7px 0;
+		}
+	}
+}
+
+
+
+// =========================
+// CART SIDE BAR START
+
+
+.sc-model {
+	position: fixed;
+	top: 0;
+	left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    transition: $transition;
+	height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 7;
+    
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 999999;
+		height: 100vh;
+        .sc-container {
+            right: 0;
+        }
+    }
+    .logo {
+        padding-left: 10px;
+    }
+}
+.sc-container {
+	@include themify($themes) {
+		background-color: themed("dark1");
+		color: themed("default");
+	}
+    position: absolute;
+    padding: 20px 0px;
+    right: -100px;
+    transition: all 300ms;
+    max-width: 350px;
+    width: 100%;
+    height: 100%;
+	box-shadow: -5px 0px 30px rgba(0, 0, 0, 0.5);
+
+	@include respond (phone-xm-mid) {
+		max-width: 310px;
+	}
+
+	
+	.cart-review {
+		@include themify($themes) {
+			background-color: themed("dark1");
+			color: themed("default");
+		}
+		padding: 30px 15px;
+		width: 350px;
+		z-index: 999;
+		height: 100%;
+
+		@include respond (phone-xm-mid) {
+			width: 310px;
+			padding: 10px 15px;
+		}
+
+		.cart-pricing {
+			position: relative;
+		}
+
+		.cart-title {
+			display: flex;
+			align-items: center;
+			padding-bottom: 20px;
+			h4 {
+				font-size: 20px;
+				font-weight: $font-medium;
+				text-transform: uppercase;
+				@include respond(phone-sm) {
+					font-size: 18px;
+					padding-bottom: 0;
+				}
+			}
+			span {
+				font-family: $font-quantico;
+				font-size: 14px;
+				font-weight: $font-light;
+				text-transform: uppercase;
+				padding-left: 20px;
+			}
+		}
+		.close {
+			cursor: pointer;
+
+			i {
+				font-size: 20px;
+				@include themify($themes) {
+					color: themed("default");
+				}
+			}
+		}
+		.cart-scroll {
+			height: 100%;
+			max-height: calc(100% - 270px);
+		}
+		.cart-pricing {
+			display: flex;
+			align-items: center;
+			padding: 10px 15px;
+			border-radius: 3px;
+
+			@include respond (phone-xm-mid) {
+				padding: 10px 15px 10px 10px;
+			}
+			.image {
+				position: relative;
+				img {
+					height: auto;
+					width: 60px;
+					border-radius: 0px;
+					display: inline-block;
+					transform: scale(1);
+					transition: $transition;
+
+					&:hover {
+						transform: scale(1.1);
+					}
+				}
+				span {
+					@include themify($themes) {
+						color: themed("default");
+						background-color: themed("faq-bg");
+						
+					}
+					font-size: 10px;
+					text-align: center;
+					position: absolute;
+					top: -10px;
+					left: -10px;
+					height: 21px;
+					width: 21px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: 2px solid transparent;
+					border-radius: 50px;
+					cursor: pointer;
+					transition: $transition;
+
+					&:hover {
+						background: $color-primary;
+						color: $color-default;
+					}
+
+				}
+			}
+			.cart-cata {
+				margin-left: 14px;
+				// position: relative;
+				width: 100%;
+    			max-width: 190px;
+
+				@include respond (phone-xm-mid) {
+					margin-left: 10px;
+				}
+
+				.span {
+					position: absolute;
+					top: 10px;
+					right: 10px;
+					padding: 0px 5px;
+					font-family: $font-quantico;
+					font-size: 10px;
+					color: $color-dark1;
+					font-weight: $font-bold;
+					margin-bottom: 20px;
+					display: block;
+					text-align: center;
+					border-radius: 3px;
+					background: $color-light;
+					box-shadow: -4px 4px 0px rgba(214, 224, 228, 0.2);
+				}
+				.d-flex.align-items-center.justify-content-between.pt-3 {
+					padding-top: 0 !important;
+					margin-top: 10px;
+				}
+			}
+			
+			.title {
+				
+				h6 {
+					margin-bottom: 0;
+					padding-right: 45px;
+
+					@include respond (phone-xm-mid) {
+						padding-right: 40px;
+					}
+					a {
+						@include themify($themes) {
+							color: themed("default");
+						}
+						font-size: 10px;
+						font-weight: 500;
+						line-height: 17px;
+						display: inline-block;
+						// text-decoration: underline;
+						text-transform: uppercase;
+						transition: $transition;
+
+						&:hover {
+							color: $color-primary;
+						}
+					}
+				}
+				
+			}
+			.price {
+				font-size: 12px;
+				line-height: 5px;
+			}
+			del {
+				font-size: 12px;
+				color: $color-darkmid;
+			}
+		}
+		.quantity {
+			display: inline-block;
+			border-radius: 6px;
+
+			> input[type="number"] {
+				@include themify($themes) {
+					color: themed("default");
+				}
+				border: none;
+				font-size: 14px;
+				background: transparent;
+				margin: 0;
+				text-align: center;
+				width: 38px;
+				height: 30px;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				outline: none;
+				padding-left: 5px;
+			}
+
+			button {
+				@include themify($themes) {
+					background-color: themed("faq-bg");
+					color: themed("default");
+				}
+				cursor: pointer;
+				display: inline-block;
+				font-size: 12px !important;
+				text-align: center;
+				height: 20px;
+				width: 20px;
+				line-height: 20px;
+				border: none;
+			}
+			.decressQnt {
+				border-radius: 50px;
+			}
+			.incressQnt {
+				border-radius: 50px;
+			}
+		}
+		.total {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 15px 0px 10px 0px;
+
+			h4 {
+				font-size: 20px;
+				font-weight: $font-regular;
+			}
+		}
+		.cart-btn {
+			svg {
+				margin-right: 10px;
+
+				path {
+					transition: $transition;
+				}
+			}
+
+			.first-btn {
+				color: $color-dark1;
+			}
+
+			.ef-btn {
+				border: 1px solid transparent;
+				width: 100%;
+				margin: 10px 0px;
+				&:hover {
+					color: $color-default;
+					background: $color-dark2;
+			
+					path {
+						fill: $color-default;
+					}
+				}
+				i {
+					@include respond (phone-sm) {
+						font-size: 12px;
+						padding-right: 5px;
+					}
+				}
+			}
+		}
+		.cart-subtotal {
+			height: 201px;
+			margin-top: -20px;
+
+			// @include respond (phone-sm) {
+			// 	margin-top: -20px;
+			// }
+		}
+	}
+}
+
+.sc-close {
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+
+.slideCol {
+    height: 100%;
+    top: 0;
+    position: relative;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	@include themify($themes) {
+		background-color: themed("toggle-bg") !important;
+	}
+}
+

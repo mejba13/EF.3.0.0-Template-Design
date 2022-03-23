@@ -1,0 +1,107 @@
+@import "mediaQuery";
+@import "themes";
+
+@mixin pseudo($t: 0, $r: 0, $b: 0, $l: 0) {
+	content: "";
+	position: absolute;
+	top: $t;
+	left: $l;
+	right: $r;
+	bottom: $b;
+}
+
+@mixin bg-props($s: cover, $p: center top, $r: no-repeat) {
+	background-size: $s;
+	background-position: $p;
+	background-repeat: $r;
+}
+
+@mixin flexbox($a: inherit, $jc: space-between) {
+	align-items: $a;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: $jc;
+}
+
+@mixin themify($themes: $themes) {
+	@each $theme, $map in $themes {
+		.theme-#{$theme} & {
+			$theme-map: () !global;
+
+			@each $key, $submap in $map {
+				$value: map-get(map-get($themes, $theme), "#{$key}");
+				$theme-map: map-merge(
+					$theme-map,
+					(
+						$key: $value,
+					)
+				) !global;
+			}
+
+			@content;
+			$theme-map: null !global;
+		}
+	}
+}
+
+@mixin transform {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin carousel-nav {
+	.owl-dot {
+		display: none;
+	}
+	.owl-nav {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-45%);
+		width: 100%;
+		display: block !important;
+		font-size: 15px;
+		transition: all 0.5s ease-in-out;
+
+		button.owl-prev {
+			@include themify($themes) {
+				color: themed("default");
+			}
+			position: absolute;
+			left: 30px;
+			height: 50px;
+			width: 50px;
+			border-radius: 50px;
+			border: 1px solid;
+			outline: none;
+			transition: $transition;
+			&:hover {
+				@include themify($themes) {
+					color: themed("secondary");
+					border-color: themed("secondary");
+				}
+			}
+		}
+		button.owl-next {
+			@include themify($themes) {
+				color: themed("default");
+			}
+			position: absolute;
+			right: 30px;
+			height: 50px;
+			width: 50px;
+			border-radius: 50px;
+			border: 1px solid;
+			outline: none;
+			transition: $transition;
+			&:hover {
+				@include themify($themes) {
+					color: themed("secondary");
+					border-color: themed("secondary");
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,106 @@
+
+// THANK YOU SECTION START
+
+.thankyou-section {
+    padding: 40px 0px;
+    @include themify($themes) {
+        background-color: themed("dark1");
+    }
+}
+
+
+.item-icon-box.v3{
+    padding: 80px 15px 60px 15px;
+    .icon.bg-success {
+        &::before {
+            border-color: $color-success;
+        }
+    }
+    .icon {
+        height: 80px !important;
+        width: 80px !important;
+
+        &::before {
+            height: 130px !important;
+            width: 130px !important;
+        }
+    }
+    h2 {
+        font-size: 30px;
+    }
+    .title {
+        padding-top: 15px;
+        padding-bottom: 10px;
+
+        @include respond (phone) {
+            padding-bottom: 16px;
+        }
+    }
+    p {
+        @include themify($themes) {
+            color: themed("default");
+        }
+        font-family: $font-lato;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: $font-medium;
+        line-height: 16px;
+        // margin-bottom: 20px;
+
+        a {
+            color: $color-secondary;
+        }
+        @include respond (phone) {
+            font-size: 16px;
+            font-weight: $font-regular;
+            line-height: 26px;
+            // margin-bottom: 16px;
+
+        }
+    }
+    .link {
+        h3 {
+            @include themify($themes) {
+                color: themed("default");
+            }
+            font-family: $font-lato;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: $font-bold;
+            line-height: 39px;
+            letter-spacing: 0em;
+            margin-top: 5px;
+            
+            a {
+                @include themify($themes) {
+                    color: themed("default");
+                }
+                display: inline-block;
+            }
+
+            @include respond (phone) {
+                font-size: 18px;
+                font-weight: $font-bold;
+                line-height: 24px;
+                // margin: 16px 0px;
+
+            }
+
+        }
+        h4 {
+            color: $color-info;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: $font-medium;
+            line-height: 32px;
+            letter-spacing: 0em;
+
+            @include respond (phone) {
+                font-size: 18px;
+                line-height: 24px;
+
+            }
+
+        }
+    }
+}

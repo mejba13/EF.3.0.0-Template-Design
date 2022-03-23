@@ -1,0 +1,98 @@
+.ef-btn {
+	font-family: $font-quantico;
+	font-weight: $font-bold;
+	font-size: 15px;
+	padding: 7px 30px;
+	color: $color-primary;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 30px;
+	text-align: center;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: $transition;
+
+	i {
+		font-size: 14px;
+		display: inline-block;
+		padding-right: 10px;
+		vertical-align: middle;
+	}
+
+	&-primary {
+		background-color: $color-primary;
+		border: 1px solid $color-primary;
+		color: $color-default;
+		&:hover {
+			color: $color-default;
+
+			svg {
+				fill: $color-default;
+			}
+		}
+		svg {
+			margin-right: 10px;
+			fill: #fff;
+			transition: $transition;
+			&:hover {
+				fill: $color-default;
+			}
+		}
+		&-filled {
+			border: 1px solid $color-danger;
+			font-weight: $font-light;
+			line-height: 20px;
+			padding: 19px 31px;
+			background-color: $color-danger;
+			color: $color-default;
+
+			&:hover {
+				background-color: transparent;
+				// border-color: $color-danger;
+				color: $color-danger;
+
+				svg {
+					fill: $color-primary;
+				}
+			}
+			svg {
+				margin-right: 10px;
+				fill: #fff;
+				transition: $transition;
+	
+				&:hover {
+					fill: $color-primary;
+				}
+			}
+		}
+		
+	}
+	&-secondary {
+		font-family: $font-lato;
+		font-size: 14px;
+		border: 1px solid $color-danger;
+		padding: 7px 22px;
+		border-radius: 30px;
+		color: $color-default;
+		background-color: $color-danger;
+		&:hover {
+			color: $color-default;
+			background-color: $color-dark1;
+			border-color: $color-dark1;
+		}
+		&-filled {
+			font-family: $font-lato;
+			font-size: 14px;
+			border: 1px solid $color-primary;
+			background-color: transparent;
+
+			&:hover {
+				background-color: $color-primary;
+				border-color: $color-primary;
+				color: $color-default;
+			}
+		}
+	}
+}

@@ -1,0 +1,262 @@
+// REVIEW SECTION START
+
+.review-section {
+	// padding: 100px 0px;
+	padding: 0px 0px 40px;
+	overflow: hidden;
+
+	@include themify($themes) {
+		background-color: themed("topbar-bg");
+	}
+
+	@include respond (medium) {
+		padding: 0px 0px 40px !important;
+	}
+
+	@include respond(phone-sm) {
+		.ef-btn {
+			padding: 7px 13px;
+		}
+	}
+
+	.section-title {
+		margin-bottom: 40px;
+
+		h2 {
+			@include themify($themes) {
+				color: themed("default");
+				text-transform: uppercase;
+			}
+			font-size: 24px;
+			font-weight: $font-bold;
+			line-height: 48px;
+			letter-spacing: 0.05em;
+			text-shadow: -2px 2px 4px rgba(255, 255, 255, 0.3);
+			text-align: center;
+
+			@include respond (phone-sm) {
+				text-align: center;
+				margin: auto;
+			}
+		}
+		@include respond (phone-sm) {
+			margin-bottom: 30px;
+		}
+		.ef-btn {
+			padding: 15px 30px;
+		}
+		.ef-btn-2 {
+			@include respond (phone-sm) {
+				display: none !important;
+			}
+		}
+	}
+
+	&.v2 {
+		padding-top: 40px;
+	}
+}
+
+.review-card {
+	position: relative;
+	transition: $transition;
+	.social-icon {
+		a {
+			background: $color-light2;
+			color: $color-default;
+			margin-left: 5px;
+			height: 24px;
+			width: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&.filled {
+				background: $color-green;
+			}
+		}
+		span {
+			@include themify($themes) {
+				color: themed("darkmid");
+			}
+			font-size: 13px;
+			font-weight: $font-regular;
+		}
+		@include respond (tabland) {
+			&.d-flex {
+				display: block !important;
+			}
+		}
+	}
+
+	.item {
+		@include themify($themes) {
+			background-color: themed("dark3");
+		}
+		position: relative;
+		padding: 30px;
+		border-radius: 5px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+		.content {
+			h5 a {
+				@include themify($themes) {
+					color: themed("default");
+				}
+				line-height: 28px;
+				padding-top: 20px;
+				padding-bottom: 10px;
+				font-weight: $font-medium;
+				display: inline-block;
+
+				@include respond (tabland) {
+					font-size: 18px;
+				}
+
+				@include respond (phone) {
+					font-size: 18px;
+					font-weight: $font-light;
+					line-height: 24px;
+				}
+			}
+			p {
+				font-size: 16px;
+				font-weight: $font-regular;
+				line-height: 24px;
+				@include themify($themes) {
+					color: themed("review-text");
+				}
+			}
+		}
+		.sub-title h6 {
+			@include themify($themes) {
+				color: themed("darkmid");
+			}
+			font-size: 16px;
+			font-weight: $font-regular;
+			line-height: 24px;
+			padding-top: 80px;
+		}
+		@include respond(tabport) {
+			margin-top: 30px;
+		}
+	}
+	@include carousel-nav;
+	.owl-nav {
+		button.owl-next {
+			font-size: 12px;
+			right: -20px;
+			height: 40px;
+			width: 40px;
+			border: none;
+			color: $color-green !important;
+			@include themify($themes) {
+				background-color: themed("caroback");
+			}
+		}
+		button.owl-prev {
+			font-size: 12px;
+			left: -20px;
+			height: 40px;
+			width: 40px;
+			border: none;
+			color: $color-green !important;
+			@include themify($themes) {
+				background-color: themed("caroback");
+			}
+		}
+	}
+}
+
+.review-card {
+	// margin: 10px 0px;
+	height: 100%;
+	.overlay {
+		@include themify($themes) {
+			background-color: themed("dark3");
+		}
+		padding: 30px 14px;
+		border-radius: 5px;
+		transition: $transition;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.1);
+
+		@include respond (phone) {
+			padding: 70px 14px;
+		}
+
+		.content {
+			h3 {
+				color: $color-green;
+
+				letter-spacing: 1px;
+
+				a {
+					@include themify($themes) {
+						color: themed("default");
+						text-decoration: underline;
+					}
+				}
+			}
+			.social-icon {
+				a {
+					height: 35px;
+					width: 35px;
+					margin: 0px 3px;
+					margin-top: 20px;
+				}
+				span {
+					font-size: 16px;
+					font-weight: $font-semibold;
+					padding-top: 20px;
+					padding-bottom: 10px;
+					display: inline-block;
+				}
+			}
+			.rating {
+				padding-top: 50px;
+				h5 {
+					@include themify($themes) {
+						color: themed("default");
+					}
+				}
+				a {
+					color: $color-green;
+					font-size: 23px;
+					padding-right: 5px;
+				}
+
+				@include respond (phone) {
+					padding-top: 40px;
+				}
+			}
+		}
+	}
+}
+
+.review-btn {
+	padding-top: 45px;
+	padding-bottom: 50px;
+	.ef-btn {
+		font-family: $font-quantico;
+		font-size: 14px;
+		font-weight: $font-bold;
+		padding: 15px 25px;
+		line-height: 16px;
+		letter-spacing: 0.02em;
+		text-align: center;
+
+		@include respond (phone) {
+			padding: 15px 20px;
+		}
+
+	}
+	@include respond (phone) {
+		padding: 30px 0px 0px !important;
+	}
+}
+
+
+// REVIEW CART END

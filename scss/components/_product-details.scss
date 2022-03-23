@@ -1,0 +1,1208 @@
+.product-section {
+	padding-top: 0px;
+	@include themify($themes) {
+		background-color: themed("topbar-bg");
+	}
+}
+
+.product-details {
+	@include themify($themes) {
+		background: themed("dark1");
+	}
+
+	@include respond (medium) {
+		padding-bottom: 0 !important;
+	}
+
+	.video-bg {
+		margin-bottom: 40px;
+		margin-top: 0;
+	}
+}
+.prod-image {
+	margin-bottom: 30px;
+}
+.prod-preview {
+	// height: 100%;
+	img {
+		border-radius: 8px;
+		overflow: hidden;
+
+		@include respond(tabport) {
+			width: 100%;
+			margin: 0 auto;
+			height: 100%;
+			object-fit: cover;
+		}
+		@include respond(phone-xm) {
+			width: 145px;
+		}
+	}
+
+}
+.prod-widget {
+	position: relative;
+	width: 100%;
+	height: 60px;
+	border-radius: 8px;
+	padding: 10px;
+	@include themify($themes) {
+		background: themed("widget");
+	}
+	@include respond(tabport) {
+		margin-top: 15px;
+	}
+	@include respond(phone-sm) {
+		height: 40px;
+	}
+
+}
+.prod-card {
+	position: relative;
+
+	@include respond (tabport) {
+		margin-top: 20px;
+	}
+	@include respond (phone-sm-mid) {
+		margin-top: 10px;
+	}
+	@include respond (phone-xm-mid) {
+		margin-top: 5px;
+	}
+}
+.prod-heading {
+	@include flexbox;
+	margin-bottom: 10px;
+
+	@include respond(tabport) {
+		display: block;
+	}
+
+	h3 {
+		flex: 1;
+		margin-bottom: 0;
+		font-family: $font-lato;
+		font-weight: $font-bold;
+		// font-size: 30px;
+		font-size: 22px;
+		line-height: 28px;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		@include respond(tabland) {
+			font-size: 18px;
+			line-height: 26px;
+		}
+		@include respond(tabport) {
+			font-size: 22px;
+			line-height: 26px;
+			margin-bottom: 15px;
+		}
+		@include respond(phone-sm) {
+			font-size: 18px;
+		}
+	}
+
+	.badge {
+		font-family: $font-quantico;
+		font-weight: $font-bold;
+		font-size: 15px;
+		line-height: 20px;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		padding: 6px 10px;
+		background: $color-secondary;
+		border-radius: 4px;
+		position: relative;
+		z-index: 1;
+		margin-left: 20px;
+		@include themify($themes) {
+			color: themed("dark1");
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -5px;
+			height: 100%;
+			width: 50px;
+			background: $color-secondary;
+			transform: skew(-20deg);
+			z-index: -1;
+
+			@include respond (phone) {
+				right: -10px;
+			}
+		}
+
+		@include respond (tabport) {
+			display: none;
+			margin-left: 0;
+		}
+	}
+}
+
+.prod-seller {
+	@include respond (tabport) {
+		margin-bottom: 20px;
+	}
+	@include respond (phone) {
+		margin-bottom: 0px;
+	}
+
+	.prod-heading {
+		// justify-content: flex-end;
+
+		@include respond (phone-sm) {
+			margin-bottom: 5px;
+		}
+		.badge {
+			line-height: 15px;
+			@include respond (tabport) {
+				display: inline-block;
+			}
+			@include respond (phone-sm-mid) {
+				font-size: 12px;
+				padding: 2px;
+			}
+			&::after {
+				right: -5px;
+				left: auto;
+				transform: skew(20deg);
+
+				@include respond (phone) {
+					right: -10px;
+				}
+			}
+		}
+	}
+
+	.price-meta {
+		del {
+			@include themify($themes) {
+				color: themed("default");
+			}
+		}
+		span {
+			color: $color-tertiary;
+			margin-left: 30px;
+		}
+
+		@include respond (phone-xm-mid) {
+			font-size: 14px;
+		}
+
+
+	}
+
+	.content {
+		margin-top: 10px;
+
+		.trustpilot-widget {
+			width: 200px !important;
+			margin: 0 !important;
+			height: 100px !important;
+
+			@include respond (phone-sm) {
+				width: 160px !important;
+			}
+			@include respond (phone-sm-mid) {
+				width: 140px !important;
+			}
+		}
+		
+	}
+	h3 {
+		font-size: 30px;
+		font-family: $font-quantico;
+		font-weight: $font-bold;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: 20px;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		@include respond (tabport) {
+			margin-bottom: 5px;
+		}
+		@include respond (phone) {
+			font-size: 23px;
+		}
+		@include respond (phone-sm) {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+	}
+	.ef-btn {
+		margin-top: 10px;
+		padding: 13px 23px;
+
+		@include respond (tabport) {
+			border-radius: 10px;
+		}
+		@include respond (phone) {
+			font-size: 12px;
+			padding: 7px 18px;
+		}
+
+		@include respond (phone-sm) {
+			margin-top: 10px;
+		}
+		@include respond (phone-sm-mid) {
+			font-size: 10px;
+			padding: 3px 12px;
+		}
+
+		svg {
+			@include respond (phone) {
+				width: 15px;
+				margin-right: 5px;
+			}
+			@include respond (phone-sm-mid) {
+				width: 10px;
+			}
+		}
+	}
+
+	.sale-quantity {
+		@include themify($themes) {
+			background: themed("price-bg");
+		}
+		border-radius: 10px;
+		padding: 8px 15px;
+		display: inline-block;
+
+		@include respond (tabport) {
+			margin-top: 8px;
+		}
+
+		@include respond(phone-sm) {
+			padding: 0px 8px;
+		}
+		@include respond(phone-xm-mid) {
+			padding: 0px 6px;
+		}
+
+		.quantity {
+			button {
+				line-height: 32px;
+				background-color: $color-default;
+				color: $color-dark1;
+	
+				@include respond(tabport) {
+					height: 25px;
+					width: 25px;
+					line-height: 0;
+				}
+				@include respond(phone) {
+					height: 20px;
+					width: 20px;
+					line-height: 0;
+				}
+				@include respond(phone-sm-mid) {
+					height: 15px;
+					width: 15px;
+					line-height: 0;
+				}
+				@include respond(phone-xm) {
+					height: 15px;
+					width: 15px;
+					line-height: 0;
+				}
+			}
+			& > input[type="number"] {
+				padding-left: 0;
+				@include respond(phone-sm) {
+					width: 27px;
+				}
+			}
+		}
+		small {
+			margin-right: 10px;
+			font-size: 14px;
+			font-weight: $font-light;
+
+			@include themify($themes) {
+				color: themed("default");
+			}
+
+			@include respond(phone) {
+				font-size: 13px;
+				line-height: 12px;
+			}
+			@include respond(phone-sm-mid) {
+				margin-right: 0px;
+				font-size: 10px;
+			}
+
+			i {
+				background-color: $color-green;
+				color: $color-default;
+				font-size: 11px;
+				height: 16px;
+				width: 16px;
+				border-radius: 50%;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 5px;
+
+				// @include respond(phone) {
+				// 	font-size: 12px;
+				// 	height: 18px;
+				// 	width: 18px;
+				// 	display: inline-table;
+				// 	text-align: center;
+				// 	line-height: 18px;
+				// }
+				@include respond(phone-sm-mid) {
+					font-size: 10px;
+					height: 15px;
+					width: 15px;
+					display: inline-table;
+					text-align: center;
+					line-height: 15px;
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+
+.prod-info {
+	@include flexbox;
+	// margin-bottom: 20px;
+
+	.price {
+		font-weight: $font-xl-bold;
+		font-size: 25px;
+		line-height: 39px;
+		color: $color-tertiary;
+		margin-bottom: 0;
+
+		@include respond(tabland) {
+			font-size: 22px;
+		}
+		@include respond(phone-sm) {
+			font-size: 20px;
+			line-height: 34px;
+			margin-bottom: 24px;
+		}
+
+		del {
+			@include themify($themes) {
+				color: themed("default");
+			}
+			font-weight: $font-regular;
+			margin-right: 20px;
+		}
+	}
+
+	&.v2 {
+		padding: 10px 0px;
+		align-items: center;
+		.price {
+			font-size: 25px;
+			line-height: 25px;
+			text-align: right;
+
+			@include respond (tabland) {
+				font-size: 14px;
+				line-height: 20px;
+			}
+			del {
+				display: block;
+				font-size: 18px;
+				margin-right: 0;
+
+				@include respond (tabland) {
+					font-size: 14px;
+				}
+			}
+		}
+		.prod-heading {
+			margin-bottom: 0;
+
+			.badge {
+				margin-left: 0;
+				&::after {
+					right: -5px;
+					left: auto;
+				}
+				@include respond (tabland) {
+					font-size: 13px;
+					padding: 3px 6px;
+				}
+			}
+		}
+
+		@include respond (tabport) {
+			display: none;
+		}
+	}
+}
+
+.rating-reviews {
+	@include flexbox(center);
+	position: relative;
+	margin-left: 15px;
+
+	@include respond (tabland) {
+		display: block;
+	}
+	@include respond (tabport) {
+		display: flex;
+		margin-left: 0;
+	}
+
+	.ratings {
+		@include themify($themes) {
+			background: themed("price-bg");
+		}
+		border-radius: 100px;
+		padding: 10px 15px;
+		margin-right: 20px;
+
+		a {
+			display: inline-block;
+			color: $color-secondary;
+			font-size: 18px;
+		}
+
+		path {
+			@include themify($themes) {
+				fill: themed("default");
+			}
+		}
+
+		@include respond (tabland) {
+			margin-right: 0;
+		}
+		@include respond (tabport) {
+			margin-right: 20px;
+		}
+	}
+	span {
+		display: inline-block;
+		font-weight: $font-regular;
+		font-size: 16px;
+		line-height: 26px;
+		text-align: right;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		@include respond (tabland) {
+			display: block;
+		}
+	}
+}
+
+.prod-spec {
+	position: relative;
+	border-radius: 8px;
+	padding: 15px 30px;
+	margin-bottom: 10px;
+	@include themify($themes) {
+		background: rgba(themed("default"), 0.03);
+	}
+	@include respond(tabport) {
+		padding: 16px;
+	}
+
+	h4 {
+		font-family: $font-lato;
+		font-weight: $font-xl-bold;
+		font-size: 24px;
+		line-height: 34px;
+		margin-bottom: 15px;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		@include respond(tabport) {
+			font-size: 16px;
+			line-height: 34px;
+		}
+	}
+
+	> ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		> li {
+			font-weight: $font-medium;
+			font-size: 18px;
+			line-height: 27px;
+			margin-bottom: 10px;
+			display: flex;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			@include themify($themes) {
+				color: themed("default");
+			}
+
+			@include respond(tabland) {
+				font-size: 16px;
+				line-height: 26px;
+			}
+			@include respond(tabport) {
+				font-size: 14px;
+				line-height: 27px;
+			}
+
+			span {
+				display: inline-block;
+
+				&:not(.stock-tag) {
+					max-width: 173px;
+					width: 100%;
+
+					@include respond(tabport) {
+						max-width: 103px;
+					}
+				}
+			}
+			a {
+				@include themify($themes) {
+					color: themed("default");
+				}
+				transition: $transition;
+
+				&:hover {
+					color: $color-primary;
+				}
+			}
+		}
+
+		ul {
+			display: inline-block;
+			li {
+				display: inline-block;
+
+				@include respond(tabport) {
+					display: block;
+				}
+
+				&:not(:last-child) {
+					margin-right: 60px;
+					@include respond(tabport) {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.review-list {
+	overflow-y: scroll;
+	height: 600px;
+
+	
+}
+.pagination.v2 {
+	margin-top: 30px;
+	padding-bottom: 60px;
+
+	@include respond (phone-sm) {
+		margin-top: 0;	
+		padding-top: 20px;
+	}
+}
+.total-review {
+	padding-top: 40px;
+	p {
+		font-size: 17px;
+		@include themify($themes) {
+			color: themed("default");
+		}
+	}
+}
+
+
+.stock-tag {
+	i {
+		color: $color-success;
+		margin-right: 10px;
+	}
+}
+
+.prod-footer {
+	@include respond(null, tabland) {
+		@include flexbox(center);
+		display: block;
+	}
+
+	@include respond (tabport) {
+		display: none;
+	}
+	.content {
+		iframe {
+			@include respond (tabland) {
+				width: 140px !important;
+				height: 85px !important;
+			}
+			
+		}
+	}
+
+	.quantity {
+		@include themify($themes) {
+			background: themed("price-bg");
+		}
+		border-radius: 100px;
+		padding: 8px;
+		margin-right: 30px;
+
+		@include respond(tabport) {
+			max-width: 118px;
+			width: 100%;
+			margin-right: 0;
+			@include flexbox(center);
+		}
+
+		button {
+			line-height: 32px;
+			background-color: $color-default;
+			color: $color-dark1;
+
+			@include respond(tabport) {
+				height: 32px;
+				width: 32px;
+			}
+		}
+
+		input[type="number"] {
+			@include respond(tabland) {
+				width: 50px;
+				font-weight: $font-xl-bold;
+				font-size: 16px;
+				line-height: 19px;
+				padding-left: 0;
+			}
+		}
+	}
+
+	.ef-btn {
+		padding: 14px 22px;
+		font-size: 15px;
+		line-height: 21px;
+		border: 1px solid $color-primary;
+		border-radius: 100px;
+
+		&:hover {
+			background: transparent;
+			color: $color-primary;
+	
+			path {
+				fill: $color-primary;
+			}
+		}
+		svg {
+			margin-right: 10px;
+			
+			path {
+				transition: $transition;
+			}
+		}
+
+		@include respond(tabland) {
+			padding: 10px;
+			font-size: 13px;
+		}
+		@include respond(phone-xm-mid) {
+			padding: 12px;
+			font-size: 12px;
+		}
+		&.bg-yellow {
+			color: $color-dark1;
+			border: 1px solid $color-secondary;
+			
+			path {
+				fill: $color-dark1;
+			}
+			&:hover {
+				@include themify($themes) {
+					color: themed("default");
+				}
+				color: $color-default;
+
+				path {
+					@include themify($themes) {
+						fill: themed("default");
+					}
+				}
+			}
+		}
+	}
+
+	.socials {
+		max-width: 338px;
+		width: 100%;
+		border-radius: 8px;
+		padding: 17px 25px;
+		font-weight: $font-medium;
+		font-size: 18px;
+		line-height: 27px;
+
+		@include respond(tabland, medium) {
+			max-width: 219px;
+		}
+		@include respond(tabland) {
+			max-width: 100%;
+			margin-top: 20px;
+		}
+		@include respond(tabport) {
+			display: none;
+		}
+
+		@include themify($themes) {
+			color: themed("default");
+			background: themed("price-bg");
+		}
+	}
+}
+
+// Product Description
+// .theme-light .product-description {
+// 	background: #f7f6f3;
+// }
+// .theme-dark .product-description {
+// 	background: rgba(#2b2c3e, 0.3);
+// }
+.product-description {
+	position: relative;
+	padding: 40px;
+	border-radius: 8px;
+	margin-top: 30px;
+	@include themify($themes) {
+		background: rgba(themed("price-bg"), 0.3);
+	}
+
+	@include respond(tabland) {
+		margin-top: 30px;
+	}
+	@include respond(tabport) {
+		margin-top: 30px;
+		padding: 0;
+		background: transparent !important;
+	}
+
+	.nav-tabs {
+		@include themify($themes) {
+			border-bottom: 2px solid themed("border-color");
+		}
+		margin-bottom: 30px;
+
+		@include respond(tabport) {
+			margin-bottom: 0px;
+		}
+
+		li {
+			&:not(:last-of-type) {
+				margin-right: 60px;
+
+				@include respond(tabland) {
+					margin-right: 50px;
+				}
+				@include respond(tabport) {
+					margin-right: 35px;
+				}
+				@include respond(phone-xm-mid) {
+					margin-right: 8px;
+				}
+			}
+		}
+
+		a {
+			display: inline-block;
+			font-family: $font-quantico;
+			font-weight: $font-bold;
+			font-size: 20px;
+			line-height: 20px;
+			letter-spacing: 0.02em;
+			text-transform: uppercase;
+			padding-bottom: 20px;
+			position: relative;
+
+			@include themify($themes) {
+				color: themed("default");
+			}
+			@include respond(tabport) {
+				margin-bottom: 20px;
+			}
+			@include respond(phone) {
+				font-size: 16px;
+			}
+			@include respond(phone-sm) {
+				font-size: 12px;
+				letter-spacing: 0;
+			}
+
+			&.active {
+				color: $color-danger;
+			}
+
+			&:before {
+				@include pseudo(auto, auto, 0, 0);
+				width: 0;
+				height: 2px;
+				background-color: $color-danger;
+				transition: $transition;
+			}
+
+			&:hover,
+			&.active {
+				&:before {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.prod-spec {
+		background: transparent;
+		padding: 0;
+
+		&:not(:last-of-type) {
+			margin-bottom: 35px;
+		}
+	}
+}
+
+.tab-content {
+	.video-bg {
+		img {
+			border-radius: 0;
+		}
+		.round {
+			&::before {
+				border-radius: 0 !important;
+			}
+		}
+	}
+}
+
+
+.content-card {
+	position: relative;
+	margin-bottom: 20px;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	@include respond(tabport) {
+		margin-bottom: 20px;
+	}
+
+	h3 {
+		font-family: $font-lato;
+		font-weight: $font-xl-bold;
+		font-size: 21px;
+		line-height: 34px;
+		margin-bottom: 10px;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		@include respond(tabport) {
+			font-size: 16px;
+			line-height: 34px;
+			margin-bottom: 10px;
+		}
+	}
+	p {
+		font-family: $font-lato;
+		font-weight: $font-regular;
+		font-size: 16px;
+		line-height: 26px;
+		margin-bottom: 0px;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		&:not(:last-of-type) {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.review-pane {
+	position: relative;
+
+	.content-card {
+		font-size: 18px;
+		line-height: 27px;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+
+		@include respond(tabport) {
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+		}
+
+		h3 {
+			margin-bottom: 0px;
+			@include respond(tabport) {
+				font-size: 22px;
+				line-height: 30px;
+			}
+			@include respond(phone-sm) {
+				font-size: 20px;
+				line-height: 30px;
+			}
+		}
+
+		@include themify($themes) {
+			border-bottom: 2px solid themed("border-color-2");
+		}
+	}
+
+	.ratings {
+		a {
+			color: $color-darkmid;
+			font-size: 15px;
+			margin-right: 5px;
+			transition: $transition;
+
+			&:hover {
+				color: $color-secondary;
+			}
+		}
+	}
+}
+
+
+
+.review-form {
+	h4 {
+		font-family: $font-lato;
+		font-weight: $font-xl-bold;
+		font-size: 24px;
+		line-height: 34px;
+		margin-bottom: 30px;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		@include respond(tabport) {
+			font-size: 22px;
+			line-height: 30px;
+			margin-bottom: 20px;
+		}
+	}
+	.form-field {
+		position: relative;
+
+		&-text {
+			position: absolute;
+			left: 30px;
+			top: 23px;
+
+			@include respond(tabland) {
+				top: 20px;
+			}
+			@include respond(tabport) {
+				top: 15px;
+			}
+		}
+	}
+	.form-control {
+		@include themify($themes) {
+			background: themed("topbar-bg");
+			color: themed("placeholer");
+		}
+		border: none;
+		height: auto;
+		font-weight: $font-regular;
+		font-size: 16px;
+		line-height: 26px;
+		padding: 22px 22px 22px 60px;
+		margin-bottom: 20px;
+
+		@include respond(tabport) {
+			font-size: 14px;
+			line-height: 16px;
+		}
+
+		&:focus,
+		&:active {
+			border: none;
+			outline: 0;
+		}
+		&::placeholder {
+			opacity: 1;
+		}
+	}
+
+	// input {
+	// }
+	textarea {
+		height: 250px;
+		resize: none;
+	}
+	@include respond (tabport) {
+		padding-bottom: 40px;
+	}
+}
+
+.review-popup-toggler {
+	display: inline-block !important;
+	margin-left: 13px;
+	cursor: pointer;
+}
+.review-popup {
+	@include themify($themes) {
+		background: themed("topbar-bg");
+	}
+	box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+	display: none;
+	position: absolute;
+	width: 340px;
+	right: 0;
+	top: 100%;
+	z-index: 99;
+	padding: 30px;
+
+	@include respond(phone-sm) {
+		left: 10px;
+		right: 0;
+	}
+	@include respond(phone-xm-mid) {
+		width: 300px;
+	}
+	@include respond(phone-xm) {
+		left: -6px;
+	}
+
+	h6 {
+		font-weight: $font-bold;
+		font-size: 15px;
+		line-height: 20px;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		&.h6-QC {
+			@include themify($themes) {
+				border-bottom: 1px solid themed("border-color-2");
+			}
+			padding-bottom: 20px;
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 16px 0 24px;
+		list-style: none;
+		margin-bottom: 20px;
+		@include themify($themes) {
+			border-bottom: 1px solid themed("border-color-2");
+		}
+
+		li {
+			@include flexbox(center, flex-start);
+			position: relative;
+			margin-bottom: 10px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+			span {
+				display: inline-block;
+				font-family: $font-quantico;
+				font-weight: $font-regular;
+				font-size: 20px;
+				line-height: 20px;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
+				text-align: left;
+				@include themify($themes) {
+					color: themed("default");
+				}
+			}
+		}
+	}
+
+	.review-actions {
+		h6 {
+			margin-bottom: 15px;
+		}
+
+		.ef-btn {
+			&:hover {
+				background: $color-dark2;
+			}
+		}
+	}
+
+	.rate {
+		max-width: 50px;
+		width: 100%;
+		margin-right: 20px;
+
+		i {
+			color: $color-secondary;
+			font-size: 20px;
+		}
+	}
+
+	.count {
+		position: relative;
+		padding: 5px 15px;
+
+		&::before {
+			@include pseudo(0, auto, auto, 0);
+			background-color: #a0bf60;
+			height: 100%;
+			width: 5px;
+			border-radius: 8px;
+		}
+
+		&.full-bg {
+			flex: 1;
+			z-index: 1;
+
+			&::before {
+				width: 100%;
+				z-index: -1;
+			}
+		}
+	}
+}
+
+
+.rating-tool.active i {
+    color: $color-secondary;
+}
+
+
+.product-details {
+	.col-5 {
+		@include respond (phone-sm) {
+			padding-right: 0 !important;
+			flex: 0 0 43.666667%;
+			max-width: 43.666667%;
+		}
+	}
+	.col-7 {
+		@include respond (phone-sm) {
+			padding-left: 10px !important;
+			padding-right: 10px !important;
+			flex: 0 0 56.333333%;
+			max-width: 56.333333%;
+		}
+	}
+}

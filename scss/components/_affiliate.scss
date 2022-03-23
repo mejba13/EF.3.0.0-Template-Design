@@ -1,0 +1,145 @@
+
+
+// AFFILIATE SECTION
+
+
+.affiliate-section {
+    @include themify($themes) {
+        background-color: themed("topbar-bg");
+    }
+    // padding: 100px 0px;
+    padding: 0 !important;
+}
+
+.item-icon-box  {
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.09);
+    h4 a{
+        @include themify($themes) {
+            color: themed("default");
+        }
+        font-size: 24px;
+        font-weight: $font-bold;
+        line-height: 34px;
+        letter-spacing: 0em;
+        text-align: center;
+        display: block;
+        padding-bottom: 5px;
+
+        @include respond (phone) {
+            font-size: 18px;
+            padding-bottom: 10px;
+        }
+    }
+    p {
+        @include themify($themes) {
+            color: themed("default");
+        }
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: $font-regular;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: center;
+
+        @include respond (phone) {
+            font-size: 14px;
+        }
+    }
+    &.v2 {
+        padding: 50px;
+        .icon {
+            @include respond (phone) {
+                height: 80px;
+                width: 80px;
+                padding: 0;
+                margin-bottom: 25px;
+            }
+        }
+        @include respond (medium) {
+           padding: 60px 22px;
+        }
+        @include respond (phone) {
+           padding: 30px 15px;
+        }
+    }
+}
+
+
+
+.join-btn {
+    .ef-btn-primary {
+        height: 60px;
+        border-radius: 100px;
+        padding: 20px 30px 20px 30px;
+        font-family: Quantico;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        border: 1px solid $color-primary;
+        letter-spacing: 0.02em;
+        text-align: center;
+        margin-top: 60px;
+
+        &:hover {
+			background: transparent;
+			color: $color-primary;
+		}
+
+        @include respond (phone) {
+           margin-top: 25px;
+
+        }
+    }
+}
+.login-content {
+    margin-top: 26px;
+    p {
+        @include themify($themes) {
+            color: themed("default");
+        }
+        font-family: $font-lato;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: $font-regular;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-bottom: 0;
+
+        a {
+            color: $color-tertiary;
+        }
+
+    }
+}
+
+.affiliate-section-title {
+    padding-bottom: 30px;
+    h2 {
+        @include themify($themes) {
+            color: themed("default");
+        }
+        font-family: $font-quantico;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: $font-bold;
+        line-height: 48px;
+        letter-spacing: 0.05em;
+        text-align: center;
+        display: block;
+        
+        text-transform: uppercase;
+
+        @include respond (phone) {
+            font-size: 24px;
+            line-height: 38px;
+
+        }
+        @include respond (phone) {
+            padding-bottom: 25px;
+
+        }
+
+    }
+}

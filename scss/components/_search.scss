@@ -1,0 +1,113 @@
+
+
+.search-filter {
+    margin-bottom: 40px;
+    display: inline-block;
+    width: 100%;
+
+    @include respond (tabport) {
+        margin-bottom: 5px;
+
+        &:nth-of-type(4) {
+            margin-bottom: 20px;
+        }
+    }
+    
+    .currency {
+        
+        .nice-select {
+            width: 100%;
+            border-radius: 0;
+            border: 1px solid;
+            @include themify($themes) {
+                
+                background-color: themed("topbar-bg");
+                color: themed("default");
+                border-color: themed("border-color-2");
+            }
+
+            @include respond (tabport) {
+                height: 45px;
+            }
+
+            .list {
+                @include themify($themes) {
+                    background-color: themed("topbar-bg");
+                    color: themed("default");
+                }
+                width: 100%;
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            }
+            .option {
+                text-align: left;
+                border: none;
+                text-transform: capitalize;
+                border-radius: 5px;
+                font-size: 17px;
+                font-weight: $font-regular;
+                
+                &:hover {
+                    background: transparent;
+                }
+                &.selected.focus {
+                    background: transparent;
+                }
+            }
+            &::after {
+                @include themify($themes) {
+                    border-color: themed("default");
+                }
+            }
+        }
+    }
+}
+
+.price-slider-form {
+    padding-bottom: 20px;
+    #slider-range {
+        background: #eaeff0;
+        position: relative;
+        border-radius: 10px;
+        width: 100%;
+        height: 5px;
+
+        .ui-slider-range {
+            background: $color-primary;
+            position: absolute;
+            height: 5px;
+        }
+        .ui-slider-handle {
+            background-color: #fff;
+            border-radius: 50%;
+            border: 3px solid $color-primary;
+            cursor: pointer;
+            display: inline-block;
+            position: absolute;
+            top: -5px;
+            width: 15px;
+            height: 15px;
+            outline: none;
+        }
+    }
+    .pricing {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .middle, .amount {
+        font-family: $font-quantico;
+        padding-top: 10px;
+        font-size: 16px;
+        font-weight: $font-regular;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        max-width: 30px;
+        text-transform: capitalize;
+        @include themify($themes) {
+                
+            background-color: themed("topbar-bg");
+            color: themed("default");
+        }
+    }
+}

@@ -1,0 +1,94 @@
+.payment-method {
+    .numbered-list li .sub-list > li:before {
+        content: none;
+    }
+    
+    .payment-methods-page {
+        text-align: center;
+    }
+
+    .t-card {
+        .icon {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin-left: 20px;
+
+            &.icon-v2 {
+                height: auto;
+                width: 120px;
+            }
+        }
+    }
+    
+    
+    .card-content {
+        display: flex;
+        align-items: center;
+        position: relative;
+        // margin-left: 50px;
+        // margin-top: -50px;
+
+        &.sub-content {
+            margin-top: 0;
+        }
+
+        .t-card-title {
+            margin-left: 0;
+        }
+
+        // @include respond (phone) {
+        //     margin-top: -40px;
+        //     margin-left: 30px;
+        // }
+    }
+    
+    .numbered-list.parent-list > li:before {
+        position: inherit;
+        display: none;
+    }
+    .numbered-list {
+        .sub-list {
+            > li {
+                padding-left: 30px;
+            }
+        }
+    }
+    
+    // .numbered-list.parent-list {
+    //     > li .sub-list.numbered-list {
+    //         .t-card-title {
+    //             margin-left: 0;
+    //             &:before {
+    //                 display: inline-block;
+    //                 width: 50px;
+    //                 height: 50px;
+    //                 border-radius: 4px;
+    //                 font-family: Lato;
+    //                 font-weight: 900;
+    //                 font-size: 24px;
+    //                 line-height: 50px;
+    //                 text-align: center;
+    //                 color: $color-secondary;
+    //                 content: counters(item, ".") " ";
+    //                 counter-increment: item;
+    //                 margin-right: 20px;
+    //                 @include themify($themes) {
+    //                     background: themed("widget");
+    //                     // background: rgba(themed("widget"), 0.3);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // .numbered-list .sub-list {
+    //     @include respond (phone-sm) {
+    //         margin-left: 20px;
+    //     }
+    //     > li {
+    //         @include respond (phone-sm) {
+    //             padding-left: 0;
+    //         }
+    // }
+    // }
+}

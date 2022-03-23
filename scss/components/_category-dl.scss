@@ -1,0 +1,58 @@
+
+.tool-content {
+    @include themify($themes) {
+        background-color: themed("dark2");
+        border-color: themed("faq-bg");
+    }
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 10px 20px;
+    border-top: 1px solid transparent;
+    h4 {
+        font-family: $font-lato;
+        font-size: 14px;
+        font-weight: $font-regular;
+        line-height: 16px;
+        text-align: center;
+        margin-bottom: 0;
+        padding-left: 10px;
+        @include themify($themes) {
+            color: themed("placeholer");
+        }
+
+        @include respond (phone) {
+            font-size: 12px;
+        }
+    }
+    .icon {
+        height: 30px;
+        width: 30px;
+        border-radius: 50px;
+        display: flex;
+        background: $color-secondary;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+        transition: $transition;
+
+        svg {
+            width: 15px;
+            height: auto;
+           path {
+                fill: $color-dark1;
+           }
+           @include respond (phone) {
+                width: 12px;
+            }
+        }
+    }
+}
+
+.tooltip {
+    font-family: $font-lato;
+    font-size: 14px;
+    font-weight: $font-regular;
+    color: $color-default;
+
+}

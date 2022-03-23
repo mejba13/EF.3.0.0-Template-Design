@@ -1,0 +1,170 @@
+// ACCORDION FAQ START
+
+.faq-section {
+	padding: 50px 0px;
+
+	@include themify($themes) {
+		background-color: themed("dark1");
+	}
+	.accordion-item {
+		transition: $transition;
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+		&:hover {
+			@include themify($themes) {
+				background-color: themed("faq-hover-bg");
+			}
+		}
+	}
+
+}
+
+// FAQ SECTION START
+
+.faq-section-v2 {
+	padding: 40px 0px;
+	@include themify($themes) {
+		background-color: themed("dark1");
+	}
+	.accordion-item {
+		transition: $transition;
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+		&:hover {
+			@include themify($themes) {
+				background-color: themed("faq-hover-bg");
+			}
+		}
+	}
+}
+
+.faq-section-title {
+	h2 {
+		@include themify($themes) {
+			color: themed("default");
+		}
+		font-family: $font-quantico;
+		font-size: 24px;
+		font-weight: $font-bold;
+		line-height: 36px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		text-shadow: -2px 2px 4px rgba(255, 255, 255, 0.3);
+
+		@include respond(phone) {
+			margin-bottom: 30px;
+			text-align: center;
+		}
+	}
+}
+
+//
+
+// Accordion
+.accordion {
+	position: relative;
+
+	&-item {
+		@include themify($themes) {
+			background-color: themed("faq-bg");
+			color: themed("default");
+		}
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+		border-radius: 8px;
+		padding: 30px 60px;
+		font-size: 24px;
+		font-family: $font-lato;
+		font-weight: $font-bold;
+		line-height: 32px;
+		margin-bottom: 10px;
+
+		@include respond(phone) {
+			padding: 30px;
+		}
+		.heading {
+			font-family: $font-lato;
+			font-size: 24px;
+			font-style: normal;
+			font-weight: $font-medium;
+			line-height: 32px;
+
+			@include respond(phone) {
+				font-size: 18px;
+			}
+		}
+
+		h5 {
+			@include themify($themes) {
+				color: themed("default");
+			}
+			font-size: 18px;
+			font-family: $font-quantico;
+			font-weight: $font-bold;
+			cursor: pointer;
+			margin-bottom: 0;
+			position: relative;
+
+			&:after {
+				content: "";
+				font-family: "themify";
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+
+			&.collapsed {
+				&:after {
+					content: "\e61a";
+				}
+			}
+			&:not(.collapsed) {
+				&:after {
+					content: "\e622";
+				}
+			}
+		}
+	}
+
+	.acr-body {
+		margin-top: 33px;
+		p {
+			font-family: $font-lato;
+			font-size: 16px;
+			font-weight: $font-regular;
+			line-height: 26px;
+		}
+
+		a {
+			@include themify($themes) {
+				color: themed("default");
+			}
+			font-family: $font-lato;
+			font-size: 16px;
+			font-weight: $font-regular;
+			padding-bottom: 15px;
+			display: block;
+			text-transform: capitalize;
+			transition: $transition;
+			transition: $transition;
+
+			i {
+				@include themify($themes) {
+					color: themed("light2");
+				}
+				margin-right: 10px;
+				transition: $transition;
+			}
+
+			&:hover {
+				color: $color-primary;
+
+				i {
+					color: $color-primary;
+				}
+			}
+		}
+	}
+}
+
+.collapsing {
+	transition: height 0.1s ease-in-out;
+}

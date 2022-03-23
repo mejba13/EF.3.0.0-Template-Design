@@ -1,0 +1,62 @@
+
+/* ==========================
+    PAGINATION START
+============================*/
+
+.pagination {
+    margin-top: 80px;
+    ul {
+        margin-bottom: 0;
+        a {
+            font-family: $font-lato;
+            font-size: 14px;
+            height: 40px;
+            width: 40px;
+            margin: 0px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            transition: $transition;
+            @include themify($themes) {
+                background-color: themed("border-color-2");
+                color: themed("default");
+                border-color: themed("boder-color");
+            }
+            @include respond (phone-sm) {
+                margin: 0px 5px;
+            }
+
+            i {
+                font-size: 12px;
+                height: 40px;
+                width: 40px;
+                line-height: 40px;
+                text-align: center;
+                color: $color-default;
+                transition: $transition;
+                @include themify($themes) {
+                    color: themed("default");
+                }
+
+                &:hover {
+                    color: $color-default;
+                }
+            }
+
+            &.active,
+            &:hover {
+                color: $color-default;
+                background: $color-primary;
+            }
+        }
+    }
+    @include respond (tabport) {
+        padding-top: 50px;
+    }
+    @include respond (phone) {
+       margin-top: 0;
+    }
+}
+

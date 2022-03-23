@@ -1,0 +1,183 @@
+/********* Navbar section (Main menu) style *********/
+.flyout-menu {
+	max-width: 350px;
+	width: 100%;
+	height: 100vh;
+	background: $color-dark1;
+	position: fixed;
+	top: 0;
+	padding: 20px;
+	left: -10%;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 9999 !important;
+	transition: $transition;
+
+	@include respond (phone) {
+		max-width: 300px;
+	}
+
+	&.slide-navbar {
+		left: 0;
+		opacity: 1;
+		visibility: visible;
+	}
+	a#close-menu {
+		font-size: 16px;
+		height: 35px;
+		width: 35px;
+		color: $color-dark1;
+		background: $color-secondary;
+		// border: 1px solid $color-dark3;
+		border-radius: 3px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: $transition;
+		margin-left: auto;
+		position: absolute;
+		right: 30px;
+		top: 20px;
+		z-index: 99;
+
+		&:hover {
+			background: $color-primary;
+			color: $color-default;
+		}
+	}
+
+	.flyout-wrap {
+		position: relative;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		li {
+			display: block;
+
+			&.has-menu-children {
+				> a {
+					position: relative;
+					&::after {
+						@include pseudo(50%, 0, auto, auto);
+						content: "\e649";
+						position: absolute;
+						font-family: "themify";
+						font-size: 10px;
+						transform: translateY(-50%);
+						color: $color-default;
+					}
+				}
+			}
+
+			a {
+				color: $color-default;
+				display: block;
+				font-family: $font-quantico;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 14px;
+				line-height: 20px;
+				letter-spacing: 0.02em;
+				text-transform: uppercase;
+				padding: 18px 0;
+				position: relative;
+
+				&:before {
+					content: "";
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					height: 2px;
+					width: 0;
+					background-color: transparent;
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+					transition: $transition;
+				}
+
+				&.active,
+				&:hover {
+					color: $color-danger;
+					&::before {
+						background-color: $color-danger;
+						width: 44px;
+					}
+				}
+			}
+		}
+		.sub-menu {
+			display: block;
+			background: $color-dark1;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			z-index: 1;
+			left: 30px;
+			top: 0;
+			opacity: 0;
+			visibility: hidden;
+			transition: $transition;
+
+			&.menu-active {
+				top: 0;
+				left: 0;
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	h6 {
+		font-family: $font-quantico;
+		font-size: 16px;
+		color: $color-default;
+		background: $color-primary;
+		font-weight: $font-bold;
+		display: inline-block;
+		padding: 8px 20px;
+		border-radius: 3px;
+		text-transform: uppercase;
+	}
+}
+
+ul.sub-menu.submenu-open {
+	// display: block;
+	opacity: 1;
+	visibility: visible;
+	left: 0;
+}
+
+.back {
+	padding: 0px !important;
+	span {
+		display: inline-block;
+		padding-left: 10px;
+		font-size: 16px;
+		&:hover {
+			color: $color-default;
+		}
+		@include respond (phone) {
+			font-size: 14px;
+			padding-left: 8px;
+		}
+	}
+	i {
+		color: $color-default;
+		background: $color-primary;
+		padding: 10px 13px;
+		font-size: 15px;
+		border-radius: 3px;
+		margin-bottom: 15px;
+	}
+	&::before {
+		width: 0 !important;
+	}
+	&:hover span {
+		color: $color-default;
+	}
+}
+
+

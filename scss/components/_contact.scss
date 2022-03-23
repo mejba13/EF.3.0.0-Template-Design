@@ -1,0 +1,155 @@
+.contact-page-section {
+	padding: 40px 0px 0px;
+	@include themify($themes) {
+		background-color: themed("topbar-bg");
+	}
+}
+
+.conatct-content {
+	@include themify($themes) {
+		color: themed("default");
+		background-color: themed("dark3");
+	}
+	padding: 40px 50px 0px 50px;
+	border-radius: 8px;
+	height: 100%;
+
+	@include respond(tabland) {
+		padding: 50px 30px;
+	}
+	@include respond(tabport) {
+		margin-bottom: 30px;
+	}
+
+	.title {
+		h3 {
+			font-family: $font-lato;
+			font-size: 30px;
+			font-style: normal;
+			font-weight: 900;
+			line-height: 39px;
+			letter-spacing: 0em;
+			padding-bottom: 30px;
+
+			@include respond(phone) {
+				font-size: 30px;
+			}
+			@include respond(phone-sm) {
+				font-size: 25px;
+			}
+			@include respond(phone-xm) {
+				font-size: 18px;
+			}
+		}
+	}
+	p {
+		display: inline-block;
+		padding-bottom: 10px;
+	}
+	.contact-link {
+		margin-top: 40px;
+		a {
+			@include themify($themes) {
+				color: themed("default");
+			}
+			font-family: $font-lato;
+			font-size: 16px;
+			font-weight: $font-regular;
+			line-height: 16px;
+			padding-bottom: 30px;
+			display: block;
+			transition: $transition;
+
+			&:hover {
+				color: $color-primary;
+			}
+
+			svg {
+				width: 25px;
+				padding-right: 10px;
+			}
+		}
+	}
+}
+
+// CONTACT_FORM START
+
+.contact-form {
+	padding: 40px 50px 50px 50px;
+	border-radius: 8px;
+	height: 100%;
+	@include themify($themes) {
+		background-color: themed("dark3");
+		color: themed("default");
+	}
+	@include respond(tabland) {
+		padding: 30px;
+	}
+	@include respond(phone) {
+		padding: 10px;
+	}
+	.title {
+		h3 {
+			font-family: $font-lato;
+			font-size: 30px;
+			font-style: normal;
+			font-weight: 900;
+			line-height: 39px;
+			letter-spacing: 0em;
+			padding-bottom: 30px;
+
+			@include respond(phone) {
+				font-size: 30px;
+			}
+			@include respond(phone-sm) {
+				font-size: 25px;
+			}
+			@include respond(phone-xm) {
+				font-size: 18px;
+			}
+		}
+
+	}
+	.subs-form {
+		margin-bottom: 20px;
+		padding-left: 20px !important;
+		padding: 0;
+		max-width: 100%;
+		margin-right: 0;
+		border-radius: 8px;
+		@include themify($themes) {
+			background-color: themed("topbar-bg") !important;
+		}
+		.form-control-text {
+			height: 230px;
+		}
+		.form-control {
+			padding: 30px 25px 30px 15px;
+		}
+	}
+	.ef-btn-primary {
+		width: 100%;
+		border-radius: 8px;
+		padding: 15px 10px;
+		border: 1px solid $color-primary;
+
+		&:hover {
+			background: transparent;
+			color: $color-primary;
+	
+			path {
+				fill: $color-primary;
+			}
+		}
+	}
+	@include respond(tabport) {
+		margin-top: 40px;
+	}
+	@include respond(phone) {
+		padding: 40px 20px 20px 20px;
+	}
+}
+
+// input {
+// 	color: $color-default !important;
+// }

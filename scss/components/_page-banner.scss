@@ -1,0 +1,67 @@
+// PAGE BANNER START
+
+.page-banner {
+	// background: url("../images/category/category.jpg");
+
+	@include bg-props;
+	padding: 110px 0px;
+	position: relative;
+	// z-index: 1;
+
+	&::after {
+		@include pseudo;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(90deg, #1e1d2b 0.86%, rgba(30, 29, 43, 0.54) 100%);
+		z-index: -1;
+	}
+	@include respond(tabport) {
+		padding: 80px 0px;
+	}
+	@include respond(tabport) {
+		padding: 60px 0px;
+	}
+	@include respond(phone) {
+		padding: 50px 0px;
+	}
+	@include respond(phone-sm) {
+		padding: 40px 0px;
+	}
+}
+
+.page-heading {
+	h1 {
+		color: $color-default;
+		font-family: $font-quantico;
+		font-size: 50px;
+		font-weight: $font-bold;
+		line-height: 78px;
+		letter-spacing: 2px;
+		text-align: center;
+		text-shadow: -2px 2px 4px rgba(255, 255, 255, 0.3);
+		text-transform: uppercase;
+		@include respond(tabland) {
+			font-size: 52px;
+		}
+		@include respond(tabport) {
+			font-size: 45px;
+			line-height: 55px;
+		}
+		@include respond(phone) {
+			font-size: 40px;
+		}
+		@include respond(phone-sm) {
+			font-size: 30px;
+			line-height: 40px;
+		}
+		@include respond(phone-xm-mid) {
+			font-size: 25px;
+			line-height: 30px;
+		}
+	}
+}
+
+// PAGE BANNER END
+
+// SEARCH_BANNER START
+

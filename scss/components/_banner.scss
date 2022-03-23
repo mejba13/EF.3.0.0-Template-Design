@@ -1,0 +1,336 @@
+// BANNER SECTION START
+
+// .banner-section {
+// 	height: 100%;
+// 	max-height: calc(100% - 205px);
+// }
+
+.banner-section {
+	@include themify($themes) {
+		background-color: themed("dark1");
+	}
+	overflow: hidden;
+	padding: 40px 0px;
+	transition: background .5s;
+
+	@include respond(phone) {
+		padding: 25px 0px !important;
+	}
+}
+
+.banner-slide {
+	position: relative;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+	.banner-item-image {
+		border-radius: 7px;
+		img {
+			border-radius: 7px;
+			
+		}
+	}
+	
+	.owl-dot {
+		display: none;
+	}
+	.owl-nav {
+		@include flexbox;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 100%;
+		font-size: 15px;
+		transition: all 0.5s ease-in-out;
+		padding: 0 30px;
+
+		@include respond(phone) {
+			padding: 0 15px;
+		}
+
+		button {
+			@include themify($themes) {
+				color: themed("owl-nav");
+				border-color: themed("owl-nav");
+			}
+			height: 50px;
+			width: 50px;
+			border-radius: 50px;
+			opacity: 0.3;
+			outline: none;
+			transition: $transition;
+
+			&:hover {
+				color: $color-secondary;
+				border-color: $color-secondary !important;
+				opacity: 1;
+			}
+			@include respond(phone) {
+				height: 40px;
+				width: 40px;
+			}
+			&.owl-next,
+			&.owl-prev {
+				border: 1px solid;
+			}
+		}
+		@include respond(phone) {
+			font-size: 10px;
+		}
+	}
+}
+
+.banner-slide-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+
+	.ef-btn {
+		border-radius: 5px;
+		border: none;
+		&:hover {
+			background: $color-dark3;
+			color: $color-default;
+		}
+
+		svg {
+			margin-right: 15px;
+			height: 20px;
+    		width: 24px;
+		}
+
+		i {
+			font-size: 18px;
+			margin-left: 8px;
+			padding: 0;
+
+			@include respond (phone) {
+				font-size: 15px;
+			}
+			@include respond (phone-xm-mid) {
+				font-size: 12px;
+			}
+		}
+
+		@include respond (phone-xm-mid) {
+			font-size: 12px;
+			padding: 2px 15px;
+		}
+	}
+	.btn-2 {
+		font-size: 18px;
+		padding: 0;
+		width: 170px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+
+		@include respond (phone) {
+			font-size: 16px;
+			width: 140px;
+			height: 40px;
+		}
+		@include respond (phone-xm-mid) {
+			font-size: 12px;
+			width: 120px;
+			height: 40px;;
+		}
+	}
+
+	&.left {
+		left: 30px;
+		bottom: 100px;
+	}
+	@include respond (phone) {
+		right: 20px;
+		bottom: 20px;
+	}
+
+	&.v2 {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		white-space: nowrap;
+		right: auto;
+	}
+	
+}
+
+.savings {
+	position: absolute;
+	top: 30px;
+	left: 0px;
+
+	h3 {
+		font-family: $font-quantico;
+		color: $color-dark1;
+		background: $color-secondary;
+		padding: 13px 15px;
+		position: relative;
+		z-index: 1;
+		margin: 0;
+		font-size: 20px;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -18px;
+			height: 100%;
+			width: 50px;
+			background: $color-secondary;
+			transform: skew(20deg);
+			z-index: -1;
+
+			@include respond (phone) {
+				right: -10px;
+			}
+		}
+
+		@include respond (phone) {
+			font-size: 16px;
+		}
+		@include respond (phone-xm-mid) {
+			font-size: 12px;
+		}
+	}
+	@include respond (phone) {
+		top: auto;
+		bottom: 20px;
+	}
+}
+
+.banner-image {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.banner-item-image {
+	overflow: hidden;
+
+	@include respond(null, tabland) {
+		// height: 527px;
+		height: 400px;
+	}
+
+	img {
+		@include respond(null, tabland) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+.banItem-img-1 {
+	background: url("../images/banner/banner-1.jpg");
+}
+
+.banner-image {
+	position: relative;
+	border-radius: 7px;
+	overflow: hidden;
+
+	@include respond(null, tabland) {
+		// height: 253px;
+		height: 189px;
+	}
+
+	img {
+		transform: scale(1);
+		overflow: hidden;
+		transition: $transition;
+		@include respond(null, tabland) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+	@include respond(tabland) {
+		margin-top: 30px;
+	}
+
+	&.mb-20 {
+		@include respond(tabland) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// BANNER SECTION END
+
+
+//  Preloader Start
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	z-index: 9999;
+
+	.loading {
+		position: relative;
+		font-family: $font-quantico;
+		font-size: 20px;
+		font-weight: 600;
+		color: $color-default;
+		height: 130px;
+		width: 130px;
+		border: 2px solid $color-primary;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-shadow: 0px 0px 21px #d0d0d0;
+	
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 125px;
+			width: 125px;
+			border: 2px solid $color-default;
+			border-radius: 50%;
+			shape-outside: circle(50% at 30%);
+			clip-path: circle(50% at 0%);
+			animation: round 1s linear infinite;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 5px;
+				left: 14px;
+				height: 17px;
+				width: 17px;
+				background: $color-default;
+				border-radius: 50%;
+				box-shadow: 0px 0px 6px #d0d0d0
+			}
+		}
+	}
+}
+
+@keyframes round {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

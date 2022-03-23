@@ -1,0 +1,298 @@
+// FOOTER SECTION START
+
+.footer {
+	@include themify($themes) {
+		background-color: themed("dark1");
+	}
+}
+
+.footer-top {
+	// padding-top: 100px;
+	padding-top: 40px;
+	position: relative;
+	@include themify($themes) {
+		background-color: themed("topbar-bg");
+	}
+
+	@include respond (medium) {
+		padding-top: 80px;
+	}
+}
+
+.footer-content {
+	margin-bottom: 35px;
+	@include themify($themes) {
+		color: themed("default");
+	}
+	.title {
+		h6 {
+			text-transform: uppercase;
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 30px;
+				left: 0;
+				background: $color-secondary;
+				height: 3px;
+				width: 90px;
+			}
+		}
+		ul {
+			margin-top: 20px;
+			li a {
+				@include themify($themes) {
+					color: themed("default");
+				}
+				font-family: $font-lato;
+				font-size: 16px;
+				font-weight: $font-regular;
+				line-height: 16px;
+				display: inline-block;
+				padding-top: 30px;
+				text-transform: capitalize;
+				transition: $transition;
+
+				svg {
+					margin-right: 10px;
+					width: 18px;
+				}
+
+				&:hover {
+					color: $color-primary;
+				}
+			}
+		}
+	}
+}
+
+
+.footer-fact {
+	@include themify($themes) {
+		background-color: themed("dark4");
+	}
+	padding: 40px 0px;
+	// padding: 60px 0px 30px 0px;
+
+	@include respond (tabport) {
+		padding: 30px 0px;
+	}
+
+	.row {
+		@include respond(phone-sm) {
+			margin: 0 -6.5px;
+		}
+	}
+	.col-6 {
+		@include respond(phone-xm) {
+			max-width: 100%;
+			flex-basis: 100%;
+		}
+	}
+	[class*="col-"] {
+		@include respond(phone-sm) {
+			padding: 0 6.5px;
+		}
+	}
+}
+
+.footer-fact-item {
+	padding: 30px 50px 30px 20px;
+	.icon-box {
+		height: 65px;
+		width: 65px;
+		transition: $transition;
+		@include respond (medium) {
+			border-radius: 15px;
+		}
+		@include respond (phone-sm) {
+			height: 50px;
+			width: 50px;
+		}
+		@include respond (phone-sm-mid) {
+			border-radius: 50px;
+		}
+	}
+	.item-content {
+		text-align: left;
+		flex: 1;
+		h5 {
+			font-family: $font-quantico !important;
+			font-size: 24px;
+			font-weight: $font-bold;
+			max-width: 100px;
+			@include respond(phone-sm) {
+				font-size: 18px;
+				max-width: 70px;
+			}
+
+			span {
+				font-family: $font-lato;
+				font-size: 12px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 16px;
+				letter-spacing: 0.1em;
+				text-align: left;
+				text-transform: uppercase;
+				display: block;
+
+				@include respond(phone-sm) {
+					font-size: 12px;
+					font-weight: 400;
+					line-height: 16px;
+					letter-spacing: 0.1em;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+	@include respond (tabland) {
+		margin-bottom: 30px;
+	}
+	@include respond (tabport) {
+		padding-right: 70px;
+	}
+	@include respond (phone) {
+		padding-right: 45px;
+	}
+	@include respond (phone-sm) {
+		padding-right: 0;
+		padding-left: 12px;
+	}
+	&:hover {
+		.icon-box {
+			transform: scale(1.1);
+		}
+	}
+}
+.cards {
+	@include themify($themes) {
+		background: themed("dark3");
+	}
+	padding: 13px 20px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	@include respond(phone-xm) {
+		padding: 15px;
+	}
+	h6 {
+		@include themify($themes) {
+			color: themed("default");
+		}
+		font-size: 16px;
+		font-weight: $font-regular;
+		// letter-spacing: 2px;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+	}
+
+	ul {
+		@include themify($themes) {
+			background: themed("topbar-bg");
+		}
+		box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+		display: inline-flex;
+		padding: 10px;
+		border-radius: 10px;
+		
+		li {
+			transition: $transition;
+			margin-right: 10px;
+			transform: scale(1);
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+	img {
+		display: inline-block;
+		width: 100%;
+	}
+	.cards-2 {
+		margin-top: 25px;
+		padding-bottom: 20px;
+		h6 {
+			font-family: $font-quantico;
+			letter-spacing: 0;
+		}
+		ul {
+			flex-wrap: wrap;
+			li {
+				margin-right: 0;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				margin: 5px 5px 5px 0px;
+				flex-shrink: 0;
+	
+				@include respond (phone) {
+					width: 45px;
+					height: 45px;
+					margin-right: 5px;
+				}
+				@include respond (phone-sm) {
+					width: 40px;
+					height: 40px;
+				}
+				@include respond (phone-xm) {
+					width: 35px;
+					height: 35px;
+				}
+	
+				img {
+					border-radius: 50%;
+					width: 50px;
+					height: 50px;
+
+					@include respond (phone) {
+						width: 45px;
+						height: 45px;
+					}
+					@include respond (phone-sm) {
+						width: 40px;
+						height: 40px;
+					}
+					@include respond (phone-xm) {
+						width: 35px;
+						height: 35px;
+					}
+				}
+	
+				
+				&:last-of-type {
+					margin-right: 0;
+
+				}
+				// @include respond (phone-sm) {
+				// 	&:nth-last-child(-n+2) {
+				// 		display: none;
+				// 	}
+				// }
+			}
+		}
+	}
+}
+
+.footer-bottom {
+	@include themify($themes) {
+		background: themed("dark1");
+	}
+
+	padding: 17px 0px;
+}
+
+.footer-bottom-content {
+	p {
+		@include themify($themes) {
+			color: themed("default");
+		}
+		margin-bottom: 0;
+	}
+}

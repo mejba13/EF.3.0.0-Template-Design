@@ -1,0 +1,42 @@
+// CHOOSE SECTION START
+
+.choose-section {
+	@include themify($themes) {
+		background-color: themed("dark1");
+		padding: 40px 0px;
+
+		// @include respond (medium) {
+		// 	padding: 80px 0px;
+		// }
+	}
+	.choose-title {
+		h2 {
+			@include themify($themes) {
+				color: themed("default");
+			}
+			padding-bottom: 40px;
+
+			@include respond(tabport) {
+				font-size: 24px;
+			}
+			@include respond(phone) {
+				padding-bottom: 20px;
+			}
+		}
+
+		.image {
+			position: relative;
+			border-radius: 20px;
+			box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
+			img {
+				border-radius: 20px;
+				// box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			}
+		}
+		@include respond(phone) {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+// CHOOSE SECTION END

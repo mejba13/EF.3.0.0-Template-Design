@@ -1,0 +1,179 @@
+.terms-section {
+	position: relative;
+	padding: 40px 0;
+	@include themify($themes) {
+		background: themed("dark1");
+	}
+}
+.numbered-list {
+	counter-reset: item;
+
+	li {
+		display: block;
+		color: $color-default;
+
+	}
+	li:before {
+		content: counters(item, ".") " ";
+		counter-increment: item;
+	}
+	&.v2 {
+		li {
+			@include themify($themes) {
+				color: themed("default");
+			}
+		}
+	}
+
+	&.parent-list {
+		> li {
+			box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+			&:before {
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				border-radius: 4px;
+				@include themify($themes) {
+					background: themed("price-bg");
+				}
+
+				font-family: Lato;
+				font-weight: 900;
+				font-size: 24px;
+				line-height: 50px;
+				text-align: center;
+				color: $color-secondary;
+
+				@include respond(phone) {
+					width: 30px;
+					height: 30px;
+					font-size: 14px;
+					line-height: 14px;
+					line-height: 30px;
+				}
+			}
+		}
+		&.v2 {
+			>li {
+				&:before {
+					position: absolute;
+				}
+				p {
+					margin-left: 65px;
+
+					@include respond (phone) {
+						margin-left: 45px;
+					}
+				}
+			}
+
+		}
+	}
+
+	.sub-list {
+		> li {
+			padding-left: 50px;
+			position: relative;
+
+			&:before {
+				font-family: $font-lato;
+				font-weight: $font-medium;
+				font-size: 18px;
+				line-height: 27px;
+				color: $color-darkmid;
+				position: absolute;
+				left: 0;
+				top: 0;
+
+				@include respond(phone) {
+					font-size: 14px;
+					line-height: 14px;
+
+					@include themify($themes) {
+						color: themed("default");
+					}
+				}
+			}
+		}
+	}
+}
+
+.t-card {
+	// background: rgba(#2b2c3e, 0.3);
+	@include themify($themes) {
+		background: rgba(themed("price-bg"), 0.3);
+	}
+	// opacity: 0.3;
+	border-radius: 8px;
+	position: relative;
+	padding: 30px;
+	&:not(:last-of-type) {
+		margin-bottom: 20px;
+	}
+
+	@include respond(phone) {
+		padding: 30px 12px;
+	}
+
+	&-title {
+		font-family: $font-lato;
+		font-weight: $font-xl-bold;
+		font-size: 24px;
+		line-height: 34px;
+		display: inline-block;
+		margin-bottom: 0;
+		margin-left: 20px;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		@include respond(phone) {
+			font-size: 16px;
+		}
+	}
+
+	.sub-list {
+		position: relative;
+		margin-top: 20px;
+
+		@include respond(phone) {
+			margin-top: 15px;
+		}
+
+		li {
+			font-family: $font-lato;
+			font-weight: $font-medium;
+			font-size: 18px;
+			line-height: 27px;
+			@include themify($themes) {
+				color: themed("card-text");
+			}
+
+			@include respond(phone) {
+				font-size: 14px;
+				line-height: 22px;
+			}
+
+			&:not(:last-of-type) {
+				margin-bottom: 20px;
+				@include respond(phone) {
+					margin-bottom: 12px;
+				}
+			}
+		}
+	}
+}
+
+
+
+.section-heading {
+	margin-bottom: 40px;
+	@include respond (phone) {
+		margin-bottom: 40px;
+	}
+	h2 {
+		@include respond (phone) {
+			line-height: 30px !important;
+		}
+	}
+}

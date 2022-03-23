@@ -1,0 +1,56 @@
+$devices: xs, sm, md, lg, xl;
+$margin_units: mb, mt, ml, mr;
+$colors: (
+	1: #fd8b60,
+	2: #fdb143,
+	3: #fed747,
+	4: #aed443,
+	5: #a0bf60,
+);
+
+// Default gutter customizing
+@for $i from 1 through 5 {
+	.gutters-#{$i * 5} {
+		margin-right: -#{$i * 5}px;
+		margin-left: -#{$i * 5}px;
+
+		> .col,
+		> [class*="col-"] {
+			padding-right: #{$i * 5}px;
+			padding-left: #{$i * 5}px;
+		}
+	}
+}
+
+// For multi color
+@each $rate, $color in $colors {
+	.ratings-#{$rate} {
+		&::before {
+			background-color: #{$color} !important;
+		}
+	}
+}
+
+// Dynamic Blur - 100 to 600
+@for $i from 1 through 6 {
+	.blur-#{$i * 100} {
+		filter: blur($i * 100 + px) !important;
+	}
+}
+
+// margins
+@each $m in $margin_units {
+	@for $i from 1 to 10 {
+		.#{$m}-#{$i * 10} {
+			@if ($m == "mt") {
+				margin-top: #{$i * 10+"px"};
+			} @else if ($m == "mb") {
+				margin-bottom: #{$i * 10+"px"};
+			} @else if ($m == "ml") {
+				margin-left: #{$i * 10+"px"};
+			} @else if ($m == "mr") {
+				margin-right: #{$i * 10+"px"};
+			}
+		}
+	}
+}

@@ -1,0 +1,120 @@
+
+.fifa-tab-section {
+    padding-top: 40px;
+
+    @include themify($themes) {
+		background-color: themed("topbar-bg");
+	}
+}
+
+.trending-section.playstation {
+    padding-bottom: 0 !important;
+}
+
+.fifatab {
+    transition: $transition;
+    text-align: center;
+    h3 {
+        @include themify($themes) {
+            color: themed("default");
+        }
+        padding-bottom: 30px;
+    }
+
+    .nav-tabs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+        flex-grow: 1;
+        border: none;
+
+        @include respond (phone) {
+            display: block;
+        }
+        
+        li {
+            // flex-basis: 24.50%;
+            flex-basis: 100%;
+            max-width: 100%;
+            margin-right: 5px;
+            border-radius: 5px;
+            background: $color-success;
+            transition: $transition;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &:hover {
+                background: $color-primary;
+            }
+
+            @include respond (phone) {
+                margin-bottom: 10px;
+            }
+
+            a {
+                display: block;
+                padding: 10px 15px;
+                img {
+                    width: auto;
+                    height: 40px;
+                    display: block;
+                    margin: 0 auto;
+                }
+                &.active {
+                    border-radius: 5px;
+                    color: $color-default;
+                    @include themify($themes) {
+                        background-color: themed("tab-hover");
+                    }
+                    transition: $transition;
+                }
+            }
+        }
+        &.v2 {
+            li {
+                
+                @include themify($themes) {
+                    background-color: themed("tab-bg");
+                }
+                a {
+                    padding: 15px 10px;
+                    
+
+                    @include respond (tabport) {
+                        padding: 10px 15px;
+                    }
+                }
+                &:hover {
+                    @include themify($themes) {
+                        background-color: themed("tab-hover");
+                    }
+                }
+            }
+
+            img {
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+            }
+            h6 {
+                @include themify($themes) {
+                    color: themed("nav-text");
+                }
+                // color: $color-default;
+                display: block;
+                padding-top: 20px;
+
+                @include respond (tabport) {
+                    padding-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+// .nintendo {
+//     padding-top: 0 !important;
+// }

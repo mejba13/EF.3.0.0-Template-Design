@@ -1,0 +1,65 @@
+
+
+// TRENSING SECTION START
+
+.category-section {
+	padding: 40px 0px 10px 0px;
+
+	@include themify($themes) {
+		background-color: themed("topbar-bg");
+	}
+	.bottom-space {
+		margin-bottom: 30px;
+	}
+
+	.page-heading {
+		padding-bottom: 50px;
+		h4 {
+			line-height: 35px;
+			font-weight: $font-medium;
+			@include themify($themes) {
+				color: themed("default");
+			}
+			span {
+				color: $color-primary;
+			}
+		}
+	}
+	&.search-page {
+		@include themify($themes) {
+			background-color: themed("dark1");
+		}
+	}
+}
+
+.full-width {
+	flex-basis: 20%;
+	flex-grow: 0;
+	max-width: 100%;
+	@include respond (xl-medium) {
+		flex-basis: 25%;
+		max-width: 50%;
+	}
+	@include respond (tabland) {
+		flex-basis: 33.33%;
+		max-width: 50%;
+	}
+	@include respond (tabport) {
+		flex-basis: 50%;
+		max-width: 50%;
+	}
+	@include respond (phone-xm-mid) {
+		flex-basis: 50%;
+		max-width: 50%;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	// @include respond (phone-xm-mid) {
+	// 	flex: 0 0 100%;
+	// 	max-width: 100%;
+	// }
+	@media (max-width: 350px) {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}

@@ -1,0 +1,94 @@
+
+// AFFILIATE BOX SECTION
+
+.affiliate-box-section {
+    @include themify($themes) {
+        background-color: themed("dark1");
+    }
+    padding: 40px 0px;
+
+    @include respond (phone) {
+        padding-bottom: 0 !important;
+    }
+}
+
+.item-icon-box  {
+    @include themify($themes) {
+        background-color: themed("dark3");
+    }
+    border-radius: 8px;
+    padding: 50px 0px;
+    height: 100%;
+    transition: $transition;
+    .icon {
+        height: 90px;
+        width: 90px;
+        border: 1px solid $color-darkmid;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 20px;
+        transition: $transition;
+        @include respond (phone) {
+            height: 60px;
+            width: 60px;
+            margin-bottom: 10px;
+        }
+        svg {
+            width: 35px;
+            height: 35px;
+            transition: $transition;
+            path {
+                @include themify($themes) {
+                    stroke: themed("svg-icon");
+                }
+                // paint-order: stroke;
+            }
+            @include respond (phone) {
+               width: 20px;
+               height: auto;
+            }
+        }
+        
+    }
+    &:hover {
+        .icon {
+            background: $color-secondary;
+            border-color: $color-secondary;
+           path {
+                stroke: $color-dark1 !important;
+           }
+           &.icon-color {
+               path {
+                fill: $color-dark1;
+               }
+           }
+        }
+    }
+    @include respond (phone) {
+        padding: 30px;
+    }
+    h2 a{
+        @include themify($themes) {
+            color: themed("default");
+        }
+        font-family: Quantico;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: $font-bold;
+        line-height: 48px;
+        letter-spacing: 0.05em;
+        text-align: center;
+        display: block;
+        @include respond (phone) {
+            font-size: 18px;
+            line-height: 18px;
+            margin-top: 20px;
+        }
+    }
+    @include respond (tabport) {
+        margin-bottom: 15px;
+    }
+}

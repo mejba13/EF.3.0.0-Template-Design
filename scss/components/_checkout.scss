@@ -1,0 +1,204 @@
+.checkout-section {
+	@include themify($themes) {
+		background-color: themed("topbar-bg");
+	}
+
+	padding: 0px 0px 40px;
+}
+
+.sec-title {
+	padding-bottom: 30px;
+
+	@include respond(phone) {
+		text-align: center;
+	}
+	h2 {
+		@include themify($themes) {
+			color: themed("default");
+		}
+		font-family: $font-quantico;
+		font-size: 30px;
+		font-weight: $font-bold;
+		line-height: 48px;
+		letter-spacing: 0.05em;
+		margin-bottom: 10px;
+		text-shadow: -2px 2px 4px rgba(255, 255, 255, 0.3);
+		text-transform: uppercase;
+		@include respond(phone) {
+			margin-bottom: 10px;
+			font-size: 24px;
+			font-family: Quantico;
+			line-height: 48px;
+			letter-spacing: 0.05em;
+			text-align: center;
+		}
+	}
+	p {
+		@include themify($themes) {
+			color: themed("default");
+		}
+		font-family: $font-lato;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: $font-semibold;
+		line-height: 32px;
+		letter-spacing: 0em;
+
+		span {
+			color: $color-green-dark;
+		}
+		@include respond(phone) {
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+}
+
+.item-box {
+	@include themify($themes) {
+		background-color: themed("dark3");
+	}
+	height: 100%;
+	border-radius: 8px;
+	padding: 30px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+	@include respond (tabport) {
+		padding: 30px;
+	}
+
+	@include respond(phone-sm) {
+		padding: 50px 25px;
+	}
+	h2 {
+		color: $color-green-dark;
+		font-family: Lato;
+		font-style: normal;
+		line-height: 36px;
+		margin-bottom: 20px;
+		letter-spacing: 0em;
+	}
+	h4 {
+		@include themify($themes) {
+			color: themed("default");
+		}
+		font-family: $font-lato;
+		font-size: 22px;
+		line-height: 34px;
+		letter-spacing: 0em;
+		margin-bottom: 20px;
+		padding-right: 20px;
+
+		@include respond (tabport) {
+			font-size: 20px;
+		}
+
+		@include respond(phone) {
+			font-size: 20px;
+			font-weight: 900;
+			line-height: 30px;
+			letter-spacing: 0em;
+		}
+		@include respond(phone-sm) {
+			font-size: 18px;
+			font-weight: 900;
+			margin-bottom: 38px;
+			line-height: 30px;
+			letter-spacing: 0em;
+		}
+	}
+	.check-box {
+		display: flex;
+		align-items: baseline;
+		position: relative;
+		padding-left: 35px;
+	}
+	h5 {
+		@include themify($themes) {
+			color: themed("default");
+		}
+		font-family: $font-lato;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: $font-semibold;
+		line-height: 30px;
+		letter-spacing: 0em;
+		text-align: left;
+		margin-bottom: 20px;
+	}
+}
+.bottom-space {
+	@include respond(tabland) {
+		margin-bottom: 30px;
+		display: block;
+	}
+}
+.item-form {
+	position: relative;
+	.submit-form {
+		@include themify($themes) {
+			background-color: themed("topbar-bg");
+		}
+		font-size: 14px;
+		width: 100%;
+		margin-bottom: 10px;
+		height: 50px;
+
+	}
+	i {
+		position: absolute;
+		bottom: 20px;
+		right: 10px;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		line-height: 30px;
+		background: rgba(10, 198, 147, 0.1);
+		border-radius: 8px;
+		color: $color-green-dark;
+	}
+
+	input[type="email"]:last-of-type {
+		padding-right: 50px;
+	}
+}
+
+.styled-checkbox {
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+
+	& + label {
+		cursor: pointer;
+		font-family: Lato;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 30px;
+		@include themify($themes) {
+			color: themed("default");
+		}
+
+		&:before {
+			@include pseudo(5px, auto, auto, 0);
+			width: 20px;
+			height: 20px;
+			background: $color-danger;
+			border-radius: 4px;
+			font-size: 12px;
+			line-height: 22px;
+			text-align: center;
+		}
+
+		span {
+			color: $color-green-dark;
+			display: block;
+		}
+	}
+	&:checked + label {
+		&:before {
+			content: "\e64c";
+			font-family: "themify";
+		}
+	}
+}

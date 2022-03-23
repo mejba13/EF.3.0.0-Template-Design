@@ -1,0 +1,85 @@
+
+//====================================
+// 404 PAGE START
+// ===================================
+
+.page-not-found {
+    padding: 50px 0px 100px 0px;
+    @include themify($themes) {
+        background-color: themed("dark2");
+    }
+
+    .page-content{
+        text-align: center;
+        h1 {
+            position: relative;
+            font-family: $font-lato;
+            font-size: 150px;
+            font-weight: bold;
+            margin-bottom: 0;
+            @include themify($themes) {
+				color: themed("default");
+			}
+
+            span {
+                color: $color-primary;
+            }
+            @include respond (tabport) {
+                font-size: 120px;
+            }
+            @include respond (phone) {
+                font-size: 100px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 5px;
+                max-width: 300px;
+                width: 100%;
+                background: $color-danger;
+
+                @include respond (tabport) {
+                    max-width: 250px;
+                }
+                @include respond (phone) {
+                    max-width: 200px;
+                }
+            }
+        }
+        h2 {
+            font-size: 35px;
+            font-weight: bold;
+            text-transform: uppercase;
+            @include themify($themes) {
+				color: themed("default");
+			}
+            @include respond (phone) {
+                font-size: 30px;
+            }
+        }
+        p {
+            padding-top: 10px;
+            padding-bottom: 20px;
+            @include themify($themes) {
+				color: themed("default");
+			}
+            @include respond (phone) {
+               padding-bottom: 10px;
+            }
+        }
+        .ef-btn-primary-filled {
+            padding: 15px 31px;
+
+            @include respond (phone-sm) {
+                padding: 13px 31px;
+            }
+        }
+    }
+}
+
+//====================================
+// 404 PAGE END
+// ===================================

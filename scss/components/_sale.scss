@@ -1,0 +1,182 @@
+// SALE SLIDER SECTION START
+
+.sale-slider-section {
+	@include themify($themes) {
+		background-color: themed("dark1");
+	}
+	// padding: 100px 0px;
+	padding: 35px 0px;
+
+}
+
+.sale-section-title {
+	h2 {
+		@include themify($themes) {
+			color: themed("default");
+		}
+		padding-bottom: 30px;
+	}
+	.ef-btn-primary-filled {
+		padding: 15px 31px;
+	}
+}
+
+.sale-slide {
+	display: flex;
+	align-items: center;
+	border-radius: 8px;
+	// border: 1px solid ;
+	// overflow: hidden;
+	@include themify($themes) {
+		border: 1px solid themed("sale-border");
+	}
+
+	.item {
+		border-radius: 8px;
+		overflow: hidden;
+		height: 350px;
+
+		@include respond (tabport) {
+			height: 100%;
+		}
+	}
+	.image {
+		background-color: $color-red-dark;
+		// padding: 58px 113px;
+		padding: 0px 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			// width: auto;
+			width: 400px;
+			height: auto;
+			display: block;
+
+			@include respond(medium) {
+				width: 100%;
+			}
+		}
+	}
+	.content {
+		@include themify($themes) {
+			background-color: themed("price-bg");
+		}
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 30px 60px;
+
+		small {
+			display: flex;
+			align-items: center;
+			@include themify($themes) {
+				color: themed("default");
+			}
+			font-size: 14px;
+			font-weight: $font-light;
+
+			i {
+				color: $color-default;
+				background-color: $color-green;
+				font-size: 8px;
+				height: 13px;
+				width: 13px;
+				border-radius: 50px;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 5px;
+			}
+		}
+		h2 {
+			@include themify($themes) {
+				color: themed("default");
+			}
+			line-height: 45px;
+			// margin: 25px 0 20px;
+			margin: 10px 0px;
+			font-size: 28px;
+
+			@include respond(phone) {
+				font-size: 18px !important;
+			}
+		}
+		p {
+			@include themify($themes) {
+				color: themed("default");
+			}
+			// font-size: 20px;
+			font-size: 17px;
+			line-height: 32px;
+			font-weight: $font-regular;
+			margin-bottom: 20px;
+
+			@include respond(phone) {
+				font-size: 14px;
+			}
+		}
+	}
+	.owl-dot {
+		display: none;
+	}
+	.owl-nav {
+		position: absolute;
+		top: -70px;
+		right: 0;
+		display: inline-flex !important;
+		font-size: 15px;
+		transition: all 0.5s ease-in-out;
+
+		@include respond (tabport) {
+			top: -68px;
+		}
+
+		button.owl-prev,
+		button.owl-next {
+			color: $color-secondary;
+			height: 35px;
+			width: 35px;
+			border-radius: 50px;
+			border: 1px solid $color-default;
+			outline: none;
+			margin-left: 20px;
+			transition: $transition;
+			border-color: $color-secondary;
+			&:hover {
+				background-color: $color-secondary;
+				color: $color-dark1;
+
+				path {
+					fill: $color-dark1;
+				}
+			}
+		}
+	}
+
+	.ef-btn {
+		display: inline-block;
+		line-height: 20px;
+		padding: 16px 30px;
+		max-width: 160px;
+
+		@include respond (phone) {
+			font-size: 15px;
+			font-weight: 700;
+			line-height: 20px;
+			padding: 14px 30px;
+			letter-spacing: 0.02em;
+			text-align: center;
+
+		}
+	}
+}
+
+@include respond(medium) {
+	.sale-slide .content {
+		padding: 27px 15px;
+	}
+}
+
+// SALE SLIDER SECTION END

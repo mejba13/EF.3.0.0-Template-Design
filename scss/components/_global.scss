@@ -1,0 +1,264 @@
+/* ==========================
+    VIDEO START
+ ============================ */
+
+.round {
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		border-radius: 3px;
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 20px !important;
+		z-index: 1;
+	}
+
+	.video-box {
+		margin: 0;
+		.video-btn {
+			i {
+				position: relative;
+				z-index: 1;
+				top: 0px;
+				left: 0px;
+				font-size: 20px;
+				color: $color-default;
+			}
+			@include transform;
+			@include themify($themes) {
+				color: themed("default");
+			}
+			background: $color-primary;
+			border-radius: 50%;
+			display: block;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			height: 100px;
+			width: 100px;
+			z-index: 1;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				animation: beat 1.5s linear infinite;
+				height: 100%;
+				width: 100%;
+				border: 10px solid;
+				border-radius: 50%;
+				z-index: -1;
+				border-color: $color-video;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				animation: beat 2.2s linear infinite;
+				border: 10px solid;
+				border-radius: 50%;
+				height: 100%;
+				width: 100%;
+				border-color: $color-video;
+			}
+			@include respond(phone-sm) {
+				height: 60px;
+				width: 60px;
+				line-height: 67px;
+			}
+		}
+		span {
+			display: none !important;
+		}
+	}
+	@-webkit-keyframes beat {
+		0% {
+			opacity: 1;
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+		100% {
+			opacity: 0;
+			-webkit-transform: scale(2);
+			transform: scale(2);
+		}
+	}
+
+	@keyframes beat {
+		0% {
+			opacity: 1;
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+		100% {
+			opacity: 0;
+			-webkit-transform: scale(2);
+			transform: scale(2);
+		}
+	}
+}
+
+// RESPONSIVE
+
+// @include respond(medium) {
+// 	section {
+// 		padding: 80px 0px !important;
+// 	}
+// }
+
+@include respond(tabland) {
+	h2 {
+		font-size: 24px !important;
+	}
+}
+// @include respond(tabport) {
+// 	section {
+// 		padding: 60px 0px !important;
+// 	}
+// }
+
+@include respond(phone) {
+	br {
+		display: none;
+	}
+	section {
+		padding: 40px 0px !important;
+	}
+}
+@include respond(phone-xm-mid) {
+	section {
+		padding: 30px 0px !important;
+	}
+}
+
+// Play Button
+.play-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	color: $color-dark1;
+
+	i {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.anim-pluse {
+	z-index: 1;
+	&:before {
+		@include pseudo;
+		-webkit-animation: pluse infinite 1.2s;
+		animation: pluse infinite 1.2s;
+		height: 100%;
+		width: 100%;
+		background-color: $color-secondary;
+		border-radius: 50%;
+		z-index: -1;
+	}
+
+	&:after {
+		@include pseudo;
+		background-color: $color-default;
+		border-radius: 50%;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+// Beat animation
+@keyframes pluse {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(2);
+		transform: scale(2);
+	}
+}
+
+
+
+/**
+ * Section Heading
+ */
+.section-heading {
+	position: relative;
+	margin-bottom: 60px;
+
+	h2 {
+		@include themify($themes) {
+			color: themed("default");
+			line-height: 48px;
+			// text-align: center;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			margin-bottom: 0;
+		}
+
+		@include respond(phone) {
+			text-align: center;
+		}
+	}
+}
+
+.z-index-1 {
+	z-index: 1 !important;
+}
+
+.message-box {
+	@include themify($themes) {
+		background: themed("price-bg");
+		color: themed("default");
+	}
+	padding: 20px 30px;
+	border-radius: 50px;
+	margin-bottom: 30px;
+	font-size: 18px;
+	font-family: $font-quantico;
+
+	@include respond(tabport) {
+		border-radius: 10px;
+	}
+
+	&.msgbox-warning {
+		background: $color-secondary;
+		color: #111;
+	}
+	&.msgbox-success {
+		background: $color-green-dark;
+		color: #333;
+	}
+	&.msgbox-danger {
+		background: $color-danger;
+		color: #ddd;
+	}
+}
+
+
+
